@@ -1,0 +1,62 @@
+﻿<Window x:Class="ProjekatHCI.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjekatHCI"
+        xmlns:prop="clr-namespace:ProjekatHCI.Util"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
+    <Grid>
+
+        <ComboBox x:Name="languageSelector" VerticalContentAlignment="Center"  SelectionChanged="LanguageChanged" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Height="33" Width="81" SelectedValuePath="Name">
+            <ComboBoxItem Name="en" Content="{prop:LocalizationExtension enLbl}" />
+            <ComboBoxItem Name="sr" Content="{prop:LocalizationExtension srLbl}" />
+        </ComboBox>
+
+        <ComboBox x:Name="themeSelector" VerticalContentAlignment="Center"  SelectionChanged="ThemeChanged" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0, 100,10" Height="33" Width="81" SelectedValuePath="Name">
+            <ComboBoxItem Name="first" Content="{prop:LocalizationExtension blueTheme}" />
+            <ComboBoxItem Name="scnd" Content="{prop:LocalizationExtension beigeTheme}" />
+            <ComboBoxItem Name="third" Content="{prop:LocalizationExtension purpleTheme}" />
+        </ComboBox>
+
+        <Button x:Name="logoutBtn" Content="{prop:LocalizationExtension logoutBtn}" Click="Logout" Height="40" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0"/>
+
+        <TabControl Margin="10,50,10,50">
+            <TabItem Header="{prop:LocalizationExtension employeesHdr}">
+                <Grid>
+                    <DataGrid x:Name="employeesDataGrid" Height="180" VerticalAlignment="Top">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="empId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdZaposlenog}" />
+                            <DataGridTextColumn x:Name="empFirstName" Header="{prop:LocalizationExtension firstnameHdr}" Binding="{Binding Ime}" />
+                            <DataGridTextColumn x:Name="empLastName" Header="{prop:LocalizationExtension lastnameHdr}" Binding="{Binding Prezime}" />
+                            <DataGridTextColumn x:Name="empUserName" Header="{prop:LocalizationExtension usernameHdr}" Binding="{Binding KorisnickoIme}" />
+                            <DataGridTextColumn x:Name="empType" Header="{prop:LocalizationExtension typeHdr}" Binding="{Binding Tip}" />
+                            <DataGridTextColumn x:Name="empStatus" Header="{prop:LocalizationExtension statusHdr}" Binding="{Binding Status}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{prop:LocalizationExtension servicesHdr}" >
+                <DataGrid x:Name="servicesDataGrid" Height="200" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="serviceId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdUsluge}" />
+                        <DataGridTextColumn x:Name="serviceName" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" />
+                        <DataGridTextColumn x:Name="serviceCost" Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="{prop:LocalizationExtension sparePartsHdr}">
+                <DataGrid x:Name="sparePartsDataGrid" Height="180" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="sparePartCode" Header="{prop:LocalizationExtension codeHdr}" Binding="{Binding Sifra}" />
+                        <DataGridTextColumn x:Name="sparePartName" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" />
+                        <DataGridTextColumn x:Name="sparePartCost" Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena}" />
+                        <DataGridTextColumn x:Name="sparePartAmount" Header="{prop:LocalizationExtension amountHdr}" Binding="{Binding Kolicina}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

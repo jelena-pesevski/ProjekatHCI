@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,12 @@
     <Compile Include="Model\DTO\RezervniDio.cs" />
     <Compile Include="Model\DTO\Usluga.cs" />
     <Compile Include="Model\DTO\Zaposleni.cs" />
+    <Compile Include="OperatorWindow.xaml.cs">
+      <DependentUpon>OperatorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RepairmanWindow.xaml.cs">
+      <DependentUpon>RepairmanWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Strings\Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,11 +116,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.sr.resx</DependentUpon>
     </Compile>
+    <Compile Include="Service\AppService.cs" />
     <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\ZaposleniService.cs" />
     <Compile Include="Util\ConnectionPool.cs" />
     <Compile Include="Util\Constants.cs" />
     <Compile Include="Util\LocalizationExtension.cs" />
     <Compile Include="Util\TranslationSource.cs" />
+    <Page Include="AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,7 +143,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OperatorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RepairmanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Themes\FirstTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Themes\ScndTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Themes\ThirdTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

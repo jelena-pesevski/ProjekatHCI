@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:ProjekatHCI.Resources.Themes">
 
     <Style TargetType="Window" x:Key="LoginStyle" >
-        <Setter Property="Background" Value="#bad1d9" />
+        <Setter Property="Background" Value="#f2e6c7" />
         <Style.Resources>
             <Style TargetType="{x:Type Label}">
                 <Setter Property="FontWeight" Value="DemiBold"/>
@@ -21,13 +21,9 @@
             </Style>
         </Style.Resources>
     </Style>
-
-
+    
     <Style TargetType="Window" x:Key="MainWindowStyle">
-        <Setter Property="Background" Value="#bad1d9" />
+        <Setter Property="Background" Value="#f2e6c7" />
     </Style>
-    
-    
-    
-    
+
 </ResourceDictionary>

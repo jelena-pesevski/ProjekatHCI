@@ -61,11 +61,83 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string amountHdr {
+            get {
+                return ResourceManager.GetString("amountHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beige.
+        /// </summary>
+        public static string beigeTheme {
+            get {
+                return ResourceManager.GetString("beigeTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blue.
+        /// </summary>
+        public static string blueTheme {
+            get {
+                return ResourceManager.GetString("blueTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code.
+        /// </summary>
+        public static string codeHdr {
+            get {
+                return ResourceManager.GetString("codeHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        public static string employeesHdr {
+            get {
+                return ResourceManager.GetString("employeesHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All fields must be filled..
+        /// </summary>
+        public static string emptyFieldsMsg {
+            get {
+                return ResourceManager.GetString("emptyFieldsMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string enLbl {
             get {
                 return ResourceManager.GetString("enLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Firstname.
+        /// </summary>
+        public static string firstnameHdr {
+            get {
+                return ResourceManager.GetString("firstnameHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string idHdr {
+            get {
+                return ResourceManager.GetString("idHdr", resourceCulture);
             }
         }
         
@@ -79,6 +151,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lastname.
+        /// </summary>
+        public static string lastnameHdr {
+            get {
+                return ResourceManager.GetString("lastnameHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string logInBtn {
@@ -88,11 +169,20 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Incorrect username or password.
+        ///   Looks up a localized string similar to Incorrect username or password!.
         /// </summary>
         public static string loginFailMsg {
             get {
                 return ResourceManager.GetString("loginFailMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log out.
+        /// </summary>
+        public static string logoutBtn {
+            get {
+                return ResourceManager.GetString("logoutBtn", resourceCulture);
             }
         }
         
@@ -106,6 +196,33 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string nameHdr {
+            get {
+                return ResourceManager.GetString("nameHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of obligations.
+        /// </summary>
+        public static string numOfObligationsHdr {
+            get {
+                return ResourceManager.GetString("numOfObligationsHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string passwordHdr {
+            get {
+                return ResourceManager.GetString("passwordHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password:.
         /// </summary>
         public static string passwrdLbl {
@@ -115,11 +232,74 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cost.
+        /// </summary>
+        public static string priceHdr {
+            get {
+                return ResourceManager.GetString("priceHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purple.
+        /// </summary>
+        public static string purpleTheme {
+            get {
+                return ResourceManager.GetString("purpleTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Services.
+        /// </summary>
+        public static string servicesHdr {
+            get {
+                return ResourceManager.GetString("servicesHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spare parts.
+        /// </summary>
+        public static string sparePartsHdr {
+            get {
+                return ResourceManager.GetString("sparePartsHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serbian.
         /// </summary>
         public static string srLbl {
             get {
                 return ResourceManager.GetString("srLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string statusHdr {
+            get {
+                return ResourceManager.GetString("statusHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string typeHdr {
+            get {
+                return ResourceManager.GetString("typeHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string usernameHdr {
+            get {
+                return ResourceManager.GetString("usernameHdr", resourceCulture);
             }
         }
         

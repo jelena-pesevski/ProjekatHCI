@@ -117,26 +117,86 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="amountHdr" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="beigeTheme" xml:space="preserve">
+    <value>Beige</value>
+  </data>
+  <data name="blueTheme" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="codeHdr" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="employeesHdr" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="emptyFieldsMsg" xml:space="preserve">
+    <value>All fields must be filled.</value>
+  </data>
   <data name="enLbl" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="firstnameHdr" xml:space="preserve">
+    <value>Firstname</value>
+  </data>
+  <data name="idHdr" xml:space="preserve">
+    <value>Id</value>
+  </data>
   <data name="languageLbl" xml:space="preserve">
     <value>Language:</value>
+  </data>
+  <data name="lastnameHdr" xml:space="preserve">
+    <value>Lastname</value>
   </data>
   <data name="logInBtn" xml:space="preserve">
     <value>Log in</value>
   </data>
   <data name="loginFailMsg" xml:space="preserve">
-    <value>Incorrect username or password</value>
+    <value>Incorrect username or password!</value>
+  </data>
+  <data name="logoutBtn" xml:space="preserve">
+    <value>Log out</value>
   </data>
   <data name="msg" xml:space="preserve">
     <value>hello</value>
   </data>
+  <data name="nameHdr" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="numOfObligationsHdr" xml:space="preserve">
+    <value>Number of obligations</value>
+  </data>
+  <data name="passwordHdr" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="passwrdLbl" xml:space="preserve">
     <value>Password:</value>
   </data>
+  <data name="priceHdr" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="purpleTheme" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="servicesHdr" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="sparePartsHdr" xml:space="preserve">
+    <value>Spare parts</value>
+  </data>
   <data name="srLbl" xml:space="preserve">
     <value>Serbian</value>
+  </data>
+  <data name="statusHdr" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="typeHdr" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="usernameHdr" xml:space="preserve">
+    <value>Username</value>
   </data>
   <data name="usernameLbl" xml:space="preserve">
     <value>Username:</value>

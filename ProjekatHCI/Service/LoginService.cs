@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjekatHCI.Model.DAO;
 using ProjekatHCI.Model.DTO;
+
 namespace ProjekatHCI.Service
 {
     public class LoginService
@@ -18,10 +19,13 @@ namespace ProjekatHCI.Service
             {
                 if(username.Equals(z.KorisnickoIme) && password.Equals(z.Lozinka))
                 {
+                    AppService.CurrEmployee = z;
+                    AppService.SetTheme();
                     if (!z.Jezik.Equals(language))
                     {
                         z.Jezik = language;
                        
+                        //TODO sacuvaj jezik u bazu
                     }
                     return z.Tip;
                 }

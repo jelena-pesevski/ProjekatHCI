@@ -33,7 +33,6 @@ namespace ProjekatHCI.Util
             {
                 if (this.currentCulture != value)
                 {
-                    Console.WriteLine(value);
                     this.currentCulture = value;
                     var @event = this.PropertyChanged;
                     if (@event != null)

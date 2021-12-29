@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Resources;
 using ProjekatHCI.Util;
 using ProjekatHCI.Service;
 
@@ -26,16 +27,43 @@ namespace ProjekatHCI
             InitializeComponent();
         }
 
+        //  TODO dodati processing za login
         private async void Login(object sender, RoutedEventArgs e)
         {
-            if(!String.IsNullOrEmpty(usernameInput.Text) && !String.IsNullOrEmpty(passwrdInput.Password))
+            ResourceManager mngr = ProjekatHCI.Resources.Strings.Resources.Resource.ResourceManager;
+            if (!String.IsNullOrEmpty(usernameInput.Text) && !String.IsNullOrEmpty(passwrdInput.Password))
             {
                 string type = await LoginService.CheckLogin(usernameInput.Text, passwrdInput.Password, ((ComboBoxItem)languageSelector.SelectedItem).Name);
                 if (type != null)
                 {
-                    MainWindow w = new MainWindow();
-                    w.Show();
+                    if ("A".Equals(type))
+                    {
+                        AdminWindow win = new AdminWindow();
+                        win.Show();
+                        this.Close();
+                    }else if ("M".Equals(type))
+                    {
+                        RepairmanWindow win = new RepairmanWindow();
+                        win.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        OperatorWindow win = new OperatorWindow();
+                        win.Show();
+                        this.Close();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show(mngr.GetString("loginFailMsg", TranslationSource.Instance.CurrentCulture));
+                    usernameInput.Text = "";
+                    passwrdInput.Password = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show(mngr.GetString("emptyFieldsMsg", TranslationSource.Instance.CurrentCulture));
             }
         }
 
@@ -43,16 +71,7 @@ namespace ProjekatHCI
         {
             ComboBox cmb = sender as ComboBox;
             ComboBoxItem typeItem = (ComboBoxItem)cmb.SelectedItem;
-            Console.WriteLine(typeItem.Name);
-
-            if ("sr".Equals(typeItem.Name))
-            {
-                TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo("sr");
-            }
-            else
-            {
-                TranslationSource.Instance.CurrentCulture = new System.Globalization.CultureInfo("en");
-            }
+            AppService.SetLanguage(typeItem.Name);
         }
     }
 }

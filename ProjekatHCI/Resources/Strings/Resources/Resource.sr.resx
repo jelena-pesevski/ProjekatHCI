@@ -117,26 +117,86 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="amountHdr" xml:space="preserve">
+    <value>Količina</value>
+  </data>
+  <data name="beigeTheme" xml:space="preserve">
+    <value>Bež</value>
+  </data>
+  <data name="blueTheme" xml:space="preserve">
+    <value>Plava</value>
+  </data>
+  <data name="codeHdr" xml:space="preserve">
+    <value>Šifra</value>
+  </data>
+  <data name="empolyeesHdr" xml:space="preserve">
+    <value>Zaposleni</value>
+  </data>
+  <data name="emptyFieldsMsg" xml:space="preserve">
+    <value>Sva polja moraju biti popunjena.</value>
+  </data>
   <data name="enLbl" xml:space="preserve">
     <value>Engleski</value>
   </data>
+  <data name="firstnameHdr" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="idHdr" xml:space="preserve">
+    <value>Id</value>
+  </data>
   <data name="languageLbl" xml:space="preserve">
     <value>Jezik:</value>
+  </data>
+  <data name="lastnameHdr" xml:space="preserve">
+    <value>Prezime</value>
   </data>
   <data name="logInBtn" xml:space="preserve">
     <value>Prijavi se</value>
   </data>
   <data name="loginFailMsg" xml:space="preserve">
-    <value>Neispravno korisničko ime ili lozinka</value>
+    <value>Neispravno korisničko ime ili lozinka!</value>
+  </data>
+  <data name="logoutBtn" xml:space="preserve">
+    <value>Odjava</value>
   </data>
   <data name="msg" xml:space="preserve">
     <value>cao</value>
   </data>
+  <data name="nameHdr" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="numOfObligationsHdr" xml:space="preserve">
+    <value>BrojZaduženja</value>
+  </data>
+  <data name="passwordHdr" xml:space="preserve">
+    <value>Lozinka</value>
+  </data>
   <data name="passwrdLbl" xml:space="preserve">
     <value>Lozinka:</value>
   </data>
+  <data name="priceHdr" xml:space="preserve">
+    <value>Cijena</value>
+  </data>
+  <data name="purpleTheme" xml:space="preserve">
+    <value>Ljubičasta</value>
+  </data>
+  <data name="servicesHdr" xml:space="preserve">
+    <value>Usluge</value>
+  </data>
+  <data name="sparePartsHdr" xml:space="preserve">
+    <value>Rezervni dijelovi</value>
+  </data>
   <data name="srLbl" xml:space="preserve">
     <value>Srpski</value>
+  </data>
+  <data name="statusHdr" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="typeHdr" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="usernameHdr" xml:space="preserve">
+    <value>KorisničkoIme</value>
   </data>
   <data name="usernameLbl" xml:space="preserve">
     <value>Korisničko ime:</value>
