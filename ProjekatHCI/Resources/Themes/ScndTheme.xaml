@@ -24,6 +24,16 @@
     
     <Style TargetType="Window" x:Key="MainWindowStyle">
         <Setter Property="Background" Value="#f2e6c7" />
+        <Style.Resources>
+            <Style TargetType="{x:Type DataGridRow}">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#f2e6c7" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#f2e6c7" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="Black" />
+                </Style.Resources>
+            </Style>
+        </Style.Resources>
     </Style>
 
 </ResourceDictionary>

@@ -41,13 +41,16 @@ namespace ProjekatHCI.Model.DAO
 
         protected override MySqlCommand PrepareInsertCommand(Zaposleni t, MySqlConnection conn)
         {
-            string query = @"INSERT INTO zaposleni (Ime, Prezime, KorisničkoIme, Lozinka, Tip) VALUES (@Ime, @Prezime, @KorisničkoIme, @Lozinka, @Tip)";
+       
+
+            string query = @"INSERT INTO zaposleni (Ime, Prezime, KorisničkoIme, Lozinka, Tip, Status) VALUES (@Ime, @Prezime, @KorisničkoIme, @Lozinka, @Tip, @Status)";
             MySqlCommand command = new MySqlCommand(query, conn);
             command.Parameters.AddWithValue("@Ime", t.Ime);
             command.Parameters.AddWithValue("@Prezime", t.Prezime);
             command.Parameters.AddWithValue("@KorisničkoIme", t.KorisnickoIme);
             command.Parameters.AddWithValue("@Lozinka", t.Lozinka);
             command.Parameters.AddWithValue("@Tip", t.Tip);
+            command.Parameters.AddWithValue("@Status", t.Status);
             return command;
         }
 

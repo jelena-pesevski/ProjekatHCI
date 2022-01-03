@@ -25,36 +25,123 @@
         <TabControl Margin="10,50,10,50">
             <TabItem Header="{prop:LocalizationExtension employeesHdr}">
                 <Grid>
-                    <DataGrid x:Name="employeesDataGrid" Height="180" VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid x:Name="employeesDataGrid" AutoGenerateColumns = "False"  Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="employeesDataGrid_RowEditEnding" >
                         <DataGrid.Columns>
-                            <DataGridTextColumn x:Name="empId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdZaposlenog}" />
-                            <DataGridTextColumn x:Name="empFirstName" Header="{prop:LocalizationExtension firstnameHdr}" Binding="{Binding Ime}" />
-                            <DataGridTextColumn x:Name="empLastName" Header="{prop:LocalizationExtension lastnameHdr}" Binding="{Binding Prezime}" />
-                            <DataGridTextColumn x:Name="empUserName" Header="{prop:LocalizationExtension usernameHdr}" Binding="{Binding KorisnickoIme}" />
-                            <DataGridTextColumn x:Name="empType" Header="{prop:LocalizationExtension typeHdr}" Binding="{Binding Tip}" />
-                            <DataGridTextColumn x:Name="empStatus" Header="{prop:LocalizationExtension statusHdr}" Binding="{Binding Status}" />
+                            <DataGridTextColumn x:Name="empId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdZaposlenog}" IsReadOnly="True" Width="0.25*" />
+                            <DataGridTextColumn x:Name="empFirstName" Header="{prop:LocalizationExtension firstnameHdr}" Binding="{Binding Ime}" IsReadOnly="False" Width="*" />
+                            <DataGridTextColumn x:Name="empLastName" Header="{prop:LocalizationExtension lastnameHdr}" Binding="{Binding Prezime}" IsReadOnly="False" Width="*" />
+                            <DataGridTextColumn x:Name="empUserName" Header="{prop:LocalizationExtension usernameHdr}" Binding="{Binding KorisnickoIme}" IsReadOnly="False" Width="*"/>
+                            <DataGridTextColumn x:Name="empPass" Header="{prop:LocalizationExtension passwordHdr}" Binding="{Binding LozinkaZaPrikaz}" IsReadOnly="False" Width="*"/>
+                            <DataGridTextColumn x:Name="empType" Header="{prop:LocalizationExtension typeHdr}" Binding="{Binding Tip}" IsReadOnly="True" Width="0.3*"/>
+                            <DataGridTextColumn x:Name="empStatus" Header="{prop:LocalizationExtension statusHdr}" Binding="{Binding Status}" IsReadOnly="False" Width="0.6*" />
                         </DataGrid.Columns>
                     </DataGrid>
+
+                    <Button x:Name="addBtnEmp"  Content="{prop:LocalizationExtension addBtn}" Click="addBtnEmp_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,0,20,110" />
+                    <Button x:Name="deleteBtnEmp"  Content="{prop:LocalizationExtension deleteBtn}" Click="deleteBtnEmp_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,50,20,50" />
+                    <Button x:Name="updateBtnEmp"  Content="{prop:LocalizationExtension updateBtn}" Click="updateBtnEmp_Click" Grid.Column="4"  Grid.Row="1" Height="40" Margin="20,100,20,10" Visibility="Hidden"/>
+
+                
+                    <Label Content="{prop:LocalizationExtension firstnameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,10,0,130"/>
+                    <Label Content="{prop:LocalizationExtension lastnameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,45,0,95"/>
+                    <Label Content="{prop:LocalizationExtension usernameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,80,0,60"/>
+                    <Label Content="{prop:LocalizationExtension passwrdLbl}" Grid.Column="0" Grid.Row="1" Margin="10,115,0,25"/>
+                    <Label Content="{prop:LocalizationExtension typeLbl}" Grid.Column="2" Grid.Row="1" Margin="10,10,0,130"/>
+                    <Label Content="{prop:LocalizationExtension statusLbl}" Grid.Column="2" Grid.Row="1" Margin="10,45,0,95"/>
+
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="firstname"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="lastname" />
+                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,80,10,60" x:Name="username" />
+                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,115,10,25" x:Name="password" />
+                    <ComboBox Grid.Column="3" Grid.Row="1" Margin="10,10,10,130" x:Name="type">
+                        <ComboBoxItem Name="A" Content="Admin" />
+                        <ComboBoxItem Name="M" Content="Majstor" />
+                        <ComboBoxItem Name="O" Content="Operater" />
+                    </ComboBox>
+                    <ComboBox Grid.Column="3" Grid.Row="1" Margin="10,45,10,95" x:Name="status">
+                        <ComboBoxItem Name="aktivan" Content="Aktivan" IsSelected="True"/>
+                        <ComboBoxItem Name="neaktivan" Content="Neaktivan" />
+                    </ComboBox>
                 </Grid>
             </TabItem>
+            
             <TabItem Header="{prop:LocalizationExtension servicesHdr}" >
-                <DataGrid x:Name="servicesDataGrid" Height="200" VerticalAlignment="Top">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn x:Name="serviceId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdUsluge}" />
-                        <DataGridTextColumn x:Name="serviceName" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" />
-                        <DataGridTextColumn x:Name="serviceCost" Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena}" />
-                    </DataGrid.Columns>
-                </DataGrid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="servicesDataGrid" AutoGenerateColumns = "False" Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="servicesDataGrid_RowEditEnding">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="serviceIdCol" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdUsluge}" IsReadOnly="True" Width="0.25*" />
+                            <DataGridTextColumn x:Name="serviceNameCol" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" IsReadOnly="False" Width="*"  />
+                            <DataGridTextColumn x:Name="serviceCostCol"  Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena, StringFormat=N2}" IsReadOnly="False" Width="*" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="addBtnService"  Content="{prop:LocalizationExtension addBtn}" Click="addBtnService_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,10,20,100"/>
+                    <Button x:Name="updateBtnService"  Content="{prop:LocalizationExtension deleteBtn}" Click="deleteBtnService_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,50,20,50" />
+                    <Button x:Name="deleteBtnService"  Content="{prop:LocalizationExtension updateBtn}" Click="updateBtnService_Click" Grid.Column="4"  Grid.Row="1" Height="40" Margin="20,100,20,10"/>
+
+                    <Label Content="{prop:LocalizationExtension nameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,10,0,130"/>
+                    <Label Content="{prop:LocalizationExtension costLbl}" Grid.Column="0" Grid.Row="1" Margin="10,45,0,95"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="serviceName"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="serviceCost" />
+
+                </Grid>
             </TabItem>
+            
             <TabItem Header="{prop:LocalizationExtension sparePartsHdr}">
-                <DataGrid x:Name="sparePartsDataGrid" Height="180" VerticalAlignment="Top">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn x:Name="sparePartCode" Header="{prop:LocalizationExtension codeHdr}" Binding="{Binding Sifra}" />
-                        <DataGridTextColumn x:Name="sparePartName" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" />
-                        <DataGridTextColumn x:Name="sparePartCost" Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena}" />
-                        <DataGridTextColumn x:Name="sparePartAmount" Header="{prop:LocalizationExtension amountHdr}" Binding="{Binding Kolicina}" />
-                    </DataGrid.Columns>
-                </DataGrid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="sparePartsDataGrid" AutoGenerateColumns = "False" Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="sparePartsDataGrid_RowEditEnding">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="sparePartCode" Header="{prop:LocalizationExtension codeHdr}" Binding="{Binding Sifra}" IsReadOnly="True" Width="0.25*" />
+                            <DataGridTextColumn x:Name="sparePartName" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" IsReadOnly="False" Width="*"  />
+                            <DataGridTextColumn x:Name="sparePartCost" Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena, StringFormat=N2}" IsReadOnly="False" Width="*"  />
+                            <DataGridTextColumn x:Name="sparePartAmount" Header="{prop:LocalizationExtension amountHdr}" Binding="{Binding Kolicina}" IsReadOnly="False" Width="*" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="addBtnParts"  Content="{prop:LocalizationExtension addBtn}" Click="addBtnParts_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,10,20,100"/>
+                    <Button x:Name="updateBtnParts"  Content="{prop:LocalizationExtension deleteBtn}" Click="deleteBtnParts_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,50,20,50" />
+                    <Button x:Name="deleteBtnParts"  Content="{prop:LocalizationExtension updateBtn}" Click="updateBtnService_Click" Grid.Column="4"  Grid.Row="1" Height="40" Margin="20,100,20,10"/>
+
+                    <Label Content="{prop:LocalizationExtension nameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,10,0,130"/>
+                    <Label Content="{prop:LocalizationExtension costLbl}" Grid.Column="0" Grid.Row="1" Margin="10,45,0,95"/>
+                    <Label Content="{prop:LocalizationExtension amountLbl}" Grid.Column="0" Grid.Row="1" Margin="10,80,0,60"/>
+                    
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="partName"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="partCost" />
+                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,80,10,60" x:Name="partAmount" />
+                </Grid>
             </TabItem>
         </TabControl>
 

@@ -18,6 +18,8 @@ namespace ProjekatHCI.Model.DTO
         public string Jezik { get; set; }
         public string Status { get; set; }
 
+        public string LozinkaZaPrikaz { get; set; }
+
         public Zaposleni(int idZaposlenog)
         {
             IdZaposlenog = idZaposlenog;
@@ -39,30 +41,12 @@ namespace ProjekatHCI.Model.DTO
         public override bool Equals(object obj)
         {
             return obj is Zaposleni zaposleni &&
-                   IdZaposlenog == zaposleni.IdZaposlenog &&
-                   Ime == zaposleni.Ime &&
-                   Prezime == zaposleni.Prezime &&
-                   KorisnickoIme == zaposleni.KorisnickoIme &&
-                   Lozinka == zaposleni.Lozinka &&
-                   Tip == zaposleni.Tip &&
-                   Tema == zaposleni.Tema &&
-                   Jezik == zaposleni.Jezik;
+                   IdZaposlenog == zaposleni.IdZaposlenog;
         }
 
         public override int GetHashCode()
         {
-            int hashCode = 1031321620;
-            hashCode = hashCode * -1521134295 + IdZaposlenog.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Ime);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Prezime);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(KorisnickoIme);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Lozinka);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Tip);
-            hashCode = hashCode * -1521134295 + Tema.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Jezik);
-            return hashCode;
+            return -742774186 + IdZaposlenog.GetHashCode();
         }
-
-       
     }
 }

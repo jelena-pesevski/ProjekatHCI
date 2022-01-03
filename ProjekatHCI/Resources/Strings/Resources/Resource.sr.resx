@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="addBtn" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="addFailedMsg" xml:space="preserve">
+    <value>Greška! Podatak ne može biti dodan!</value>
+  </data>
+  <data name="addSuccessMsg" xml:space="preserve">
+    <value>Uspješno dodavanje!</value>
+  </data>
   <data name="amountHdr" xml:space="preserve">
     <value>Količina</value>
+  </data>
+  <data name="amountLbl" xml:space="preserve">
+    <value>Količina:</value>
   </data>
   <data name="beigeTheme" xml:space="preserve">
     <value>Bež</value>
@@ -129,17 +141,38 @@
   <data name="codeHdr" xml:space="preserve">
     <value>Šifra</value>
   </data>
+  <data name="confirmUpdateMsg" xml:space="preserve">
+    <value>Sačuvaj izmjene</value>
+  </data>
+  <data name="costLbl" xml:space="preserve">
+    <value>Cijena:</value>
+  </data>
+  <data name="deleteBtn" xml:space="preserve">
+    <value>Obriši</value>
+  </data>
+  <data name="deleteFailedMsg" xml:space="preserve">
+    <value>Greška! Podatak ne može biti obrisan!</value>
+  </data>
+  <data name="deleteSuccessMsg" xml:space="preserve">
+    <value>Uspješno brisanje!</value>
+  </data>
   <data name="empolyeesHdr" xml:space="preserve">
     <value>Zaposleni</value>
   </data>
   <data name="emptyFieldsMsg" xml:space="preserve">
     <value>Sva polja moraju biti popunjena.</value>
   </data>
+  <data name="emptyFieldsWarn" xml:space="preserve">
+    <value>Sva polja moraju biti ispravno popunjena!</value>
+  </data>
   <data name="enLbl" xml:space="preserve">
     <value>Engleski</value>
   </data>
   <data name="firstnameHdr" xml:space="preserve">
     <value>Ime</value>
+  </data>
+  <data name="firstnameLbl" xml:space="preserve">
+    <value>Ime:</value>
   </data>
   <data name="idHdr" xml:space="preserve">
     <value>Id</value>
@@ -149,6 +182,9 @@
   </data>
   <data name="lastnameHdr" xml:space="preserve">
     <value>Prezime</value>
+  </data>
+  <data name="lastnameLbl" xml:space="preserve">
+    <value>Prezime:</value>
   </data>
   <data name="logInBtn" xml:space="preserve">
     <value>Prijavi se</value>
@@ -164,6 +200,12 @@
   </data>
   <data name="nameHdr" xml:space="preserve">
     <value>Naziv</value>
+  </data>
+  <data name="nameLbl" xml:space="preserve">
+    <value>Naziv:</value>
+  </data>
+  <data name="noBtn" xml:space="preserve">
+    <value>Ne</value>
   </data>
   <data name="numOfObligationsHdr" xml:space="preserve">
     <value>BrojZaduženja</value>
@@ -192,13 +234,31 @@
   <data name="statusHdr" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="statusLbl" xml:space="preserve">
+    <value>Status:</value>
+  </data>
   <data name="typeHdr" xml:space="preserve">
     <value>Tip</value>
+  </data>
+  <data name="typeLbl" xml:space="preserve">
+    <value>Tip:</value>
+  </data>
+  <data name="updateBtn" xml:space="preserve">
+    <value>Ažuriraj</value>
+  </data>
+  <data name="updateFailedMsg" xml:space="preserve">
+    <value>Greška! Podatak ne može biti ažuriran!</value>
+  </data>
+  <data name="updateSuccessMsg" xml:space="preserve">
+    <value>Upsješno ažuriranje!</value>
   </data>
   <data name="usernameHdr" xml:space="preserve">
     <value>KorisničkoIme</value>
   </data>
   <data name="usernameLbl" xml:space="preserve">
     <value>Korisničko ime:</value>
+  </data>
+  <data name="yesBtn" xml:space="preserve">
+    <value>Da</value>
   </data>
 </root>

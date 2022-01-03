@@ -70,6 +70,9 @@
     <Compile Include="AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmationBox.xaml.cs">
+      <DependentUpon>ConfirmationBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -118,12 +121,18 @@
     </Compile>
     <Compile Include="Service\AppService.cs" />
     <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\RezervniDioService.cs" />
+    <Compile Include="Service\UslugaService.cs" />
     <Compile Include="Service\ZaposleniService.cs" />
     <Compile Include="Util\ConnectionPool.cs" />
     <Compile Include="Util\Constants.cs" />
     <Compile Include="Util\LocalizationExtension.cs" />
     <Compile Include="Util\TranslationSource.cs" />
     <Page Include="AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfirmationBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -61,11 +61,47 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string addBtn {
+            get {
+                return ResourceManager.GetString("addBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error! Data can&apos;t be added!.
+        /// </summary>
+        public static string addFailedMsg {
+            get {
+                return ResourceManager.GetString("addFailedMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully added!.
+        /// </summary>
+        public static string addSuccessMsg {
+            get {
+                return ResourceManager.GetString("addSuccessMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount.
         /// </summary>
         public static string amountHdr {
             get {
                 return ResourceManager.GetString("amountHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount:.
+        /// </summary>
+        public static string amountLbl {
+            get {
+                return ResourceManager.GetString("amountLbl", resourceCulture);
             }
         }
         
@@ -97,6 +133,51 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save changes.
+        /// </summary>
+        public static string confirmUpdateMsg {
+            get {
+                return ResourceManager.GetString("confirmUpdateMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost:.
+        /// </summary>
+        public static string costLbl {
+            get {
+                return ResourceManager.GetString("costLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string deleteBtn {
+            get {
+                return ResourceManager.GetString("deleteBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error! Data can&apos;t be deleted.
+        /// </summary>
+        public static string deleteFailedMsg {
+            get {
+                return ResourceManager.GetString("deleteFailedMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully deleted!.
+        /// </summary>
+        public static string deleteSuccessMsg {
+            get {
+                return ResourceManager.GetString("deleteSuccessMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Employees.
         /// </summary>
         public static string employeesHdr {
@@ -115,6 +196,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All fields must be filled correctly!.
+        /// </summary>
+        public static string emptyFieldsWarn {
+            get {
+                return ResourceManager.GetString("emptyFieldsWarn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string enLbl {
@@ -129,6 +219,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string firstnameHdr {
             get {
                 return ResourceManager.GetString("firstnameHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Firstname:.
+        /// </summary>
+        public static string firstnameLbl {
+            get {
+                return ResourceManager.GetString("firstnameLbl", resourceCulture);
             }
         }
         
@@ -156,6 +255,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string lastnameHdr {
             get {
                 return ResourceManager.GetString("lastnameHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lastname:.
+        /// </summary>
+        public static string lastnameLbl {
+            get {
+                return ResourceManager.GetString("lastnameLbl", resourceCulture);
             }
         }
         
@@ -201,6 +309,24 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string nameHdr {
             get {
                 return ResourceManager.GetString("nameHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        public static string nameLbl {
+            get {
+                return ResourceManager.GetString("nameLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string noBtn {
+            get {
+                return ResourceManager.GetString("noBtn", resourceCulture);
             }
         }
         
@@ -286,11 +412,56 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Status:.
+        /// </summary>
+        public static string statusLbl {
+            get {
+                return ResourceManager.GetString("statusLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
         public static string typeHdr {
             get {
                 return ResourceManager.GetString("typeHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type:.
+        /// </summary>
+        public static string typeLbl {
+            get {
+                return ResourceManager.GetString("typeLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string updateBtn {
+            get {
+                return ResourceManager.GetString("updateBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error! Data can&apos;t be updated!.
+        /// </summary>
+        public static string updateFailedMsg {
+            get {
+                return ResourceManager.GetString("updateFailedMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successfully updated!.
+        /// </summary>
+        public static string updateSuccessMsg {
+            get {
+                return ResourceManager.GetString("updateSuccessMsg", resourceCulture);
             }
         }
         
@@ -309,6 +480,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string usernameLbl {
             get {
                 return ResourceManager.GetString("usernameLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string yesBtn {
+            get {
+                return ResourceManager.GetString("yesBtn", resourceCulture);
             }
         }
     }

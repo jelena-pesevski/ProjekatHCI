@@ -53,6 +53,7 @@ namespace ProjekatHCI.Model.DAO
             MySqlCommand command = new MySqlCommand(query, conn);
             command.Parameters.AddWithValue("@Naziv", t.Naziv);
             command.Parameters.AddWithValue("@Cijena", t.Cijena);
+            command.Parameters.AddWithValue("@Kolicina", t.Kolicina);
             command.Parameters.AddWithValue("@Sifra", t.Sifra);
             return command;
         }

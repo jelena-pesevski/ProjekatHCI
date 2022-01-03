@@ -2,10 +2,39 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ProjekatHCI.Resources.Themes">
 
+    <Style TargetType="Window" x:Key="LoginStyle" >
+        <Setter Property="Background" Value="#d6babe" />
+        <Style.Resources>
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="FontSize" Value="15" />
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+        </Style.Resources>
+    </Style>
 
 
     <Style TargetType="Window" x:Key="MainWindowStyle">
         <Setter Property="Background" Value="#d6babe" />
+        <Style.Resources>
+            <Style TargetType="{x:Type DataGridRow}">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#d6babe" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#d6babe" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="Black" />
+                </Style.Resources>
+            </Style>
+        </Style.Resources>
     </Style>
 
 </ResourceDictionary>

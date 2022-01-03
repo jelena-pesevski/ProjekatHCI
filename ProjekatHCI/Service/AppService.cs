@@ -44,7 +44,7 @@ namespace ProjekatHCI.Service
             }
         }
 
-        public static void ChangeTheme(string theme)
+        public async static void ChangeTheme(string theme)
         {
             if ("first".Equals(theme))
             {
@@ -61,7 +61,7 @@ namespace ProjekatHCI.Service
             }
 
             SetTheme();
-            ZaposleniService.UpdateZaposleni(CurrEmployee);
+            await ZaposleniService.UpdateZaposleni(CurrEmployee);
         }
     }
 }
