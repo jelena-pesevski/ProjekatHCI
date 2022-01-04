@@ -192,7 +192,6 @@ namespace ProjekatHCI
                 if (result)
                 {
                     MessageBox.Show(mngr.GetString("deleteSuccessMsg", TranslationSource.Instance.CurrentCulture));
-                    ClearFieldsEmployees();
                     UpdateEmployees();
                 }
                 else
@@ -210,7 +209,8 @@ namespace ProjekatHCI
                 if (result)
                 {
                     MessageBox.Show(mngr.GetString("addSuccessMsg", TranslationSource.Instance.CurrentCulture));
-                    UpdateServices();
+                    ClearFieldsService();
+                    servicesDataGrid.Items.Refresh();
                 }
                 else
                 {
@@ -237,7 +237,9 @@ namespace ProjekatHCI
                 if (result)
                 {
                     MessageBox.Show(mngr.GetString("deleteSuccessMsg", TranslationSource.Instance.CurrentCulture));
-                    UpdateServices();
+                    int index = services.IndexOf(selectedItem);
+                    services.RemoveAt(index);
+                    servicesDataGrid.Items.Refresh();
                 }
                 else
                 {
@@ -255,7 +257,7 @@ namespace ProjekatHCI
                 {
                     MessageBox.Show(mngr.GetString("addSuccessMsg", TranslationSource.Instance.CurrentCulture));
                     ClearFieldsSparePart();
-                    UpdateSpareParts();
+                    sparePartsDataGrid.Items.Refresh();
                 }
                 else
                 {
@@ -282,7 +284,9 @@ namespace ProjekatHCI
                 if (result)
                 {
                     MessageBox.Show(mngr.GetString("deleteSuccessMsg", TranslationSource.Instance.CurrentCulture));
-                    UpdateSpareParts();
+                    int index = spareParts.IndexOf(selectedItem);
+                    spareParts.RemoveAt(index);
+                    sparePartsDataGrid.Items.Refresh();
                 }
                 else
                 {
@@ -365,6 +369,11 @@ namespace ProjekatHCI
             Usluga u = new Usluga(0, serviceName.Text, Double.Parse(serviceCost.Text));
 
             Boolean result = await UslugaService.AddUsluga(u);
+            if (result)
+            {
+                services.Add(u);
+            }
+
             return result;
 
         }
@@ -374,6 +383,10 @@ namespace ProjekatHCI
             RezervniDio r = new RezervniDio(0, partName.Text, Double.Parse(partCost.Text), Int32.Parse(partAmount.Text));
 
             Boolean result = await RezervniDioService.AddRezDio(r);
+            if (result)
+            {
+                spareParts.Add(r);
+            }
             return result;
 
         }
@@ -551,6 +564,7 @@ namespace ProjekatHCI
 
         private async void PerformUpdatePart(RezervniDio r)
         {
+           
             bool result = await RezervniDioService.UpdateRezDio(r);
             if (result)
             {

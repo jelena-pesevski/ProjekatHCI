@@ -19,6 +19,10 @@ namespace ProjekatHCI.Model.DAO
 
         protected override Popravka ParseLine(DbDataReader reader)
         {
+            if (reader.IsDBNull(4))
+            {
+                return new Popravka(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetDateTime(3), reader.GetBoolean(5));
+            }
             return new Popravka(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetDateTime(3), reader.GetDateTime(4), reader.GetBoolean(5));
         }
 

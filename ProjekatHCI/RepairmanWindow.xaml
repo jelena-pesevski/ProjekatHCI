@@ -6,8 +6,89 @@
         xmlns:local="clr-namespace:ProjekatHCI"
          xmlns:prop="clr-namespace:ProjekatHCI.Util"
         mc:Ignorable="d"
-        Title="RepairmanWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
+        Title="RepairmanWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
     <Grid>
+        <ComboBox x:Name="languageSelector" VerticalContentAlignment="Center"  SelectionChanged="LanguageChanged" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Height="33" Width="81" SelectedValuePath="Name">
+            <ComboBoxItem Name="en" Content="{prop:LocalizationExtension enLbl}" />
+            <ComboBoxItem Name="sr" Content="{prop:LocalizationExtension srLbl}" />
+        </ComboBox>
+
+        <ComboBox x:Name="themeSelector" VerticalContentAlignment="Center"  SelectionChanged="ThemeChanged" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0, 100,10" Height="33" Width="81" SelectedValuePath="Name">
+            <ComboBoxItem Name="first" Content="{prop:LocalizationExtension blueTheme}" />
+            <ComboBoxItem Name="scnd" Content="{prop:LocalizationExtension beigeTheme}" />
+            <ComboBoxItem Name="third" Content="{prop:LocalizationExtension purpleTheme}" />
+        </ComboBox>
+
+        <Button x:Name="logoutBtn" Content="{prop:LocalizationExtension logoutBtn}" Click="Logout" Height="40" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0"/>
+
+        <TabControl Margin="10,50,10,50">
+            <TabItem Header="{prop:LocalizationExtension faultReportsHdr}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.7*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid x:Name="faultReportsDataGrid" AutoGenerateColumns = "False"  Height="210" VerticalAlignment="Top" Grid.ColumnSpan="5">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="frId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdPrijave}" IsReadOnly="True" Width="0.15*" CanUserResize="False"/>
+                            <DataGridTextColumn x:Name="frDate" Header="{prop:LocalizationExtension dateHdr}" Binding="{Binding DatumPrijave}" IsReadOnly="True" Width="0.6*" CanUserResize="False" />
+                            <DataGridTextColumn x:Name="frDescription" Header="{prop:LocalizationExtension descriptionHdr}" Binding="{Binding Opis}" IsReadOnly="True" Width="0.8*" CanUserResize="True" />
+                            <DataGridTextColumn x:Name="frStatus" Header="{prop:LocalizationExtension statusHdr}" Binding="{Binding Status}" IsReadOnly="True" Width="0.4*"  CanUserResize="True"/>
+                            <DataGridTextColumn x:Name="frOpId" Header="{prop:LocalizationExtension operatorIdHdr}" Binding="{Binding Operater_IdZaposlenog}" IsReadOnly="True" Width="0.25*"  CanUserResize="False"/>
+                            <DataGridTextColumn x:Name="frRmId" Header="{prop:LocalizationExtension repairmanIdHdr}" Binding="{Binding Majstor_IdZaposlenog}" IsReadOnly="True" Width="0.27*"  CanUserResize="False"/>
+                            <DataGridTextColumn x:Name="frClId" Header="{prop:LocalizationExtension clientIdHdr}" Binding="{Binding IdKlijenta}" IsReadOnly="True" Width="0.20*"  CanUserResize="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button x:Name="detailsBtn"  Content="{prop:LocalizationExtension showDetailsBtn}" Click="detailsBtn_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,5,20,70" />
+                    <Button x:Name="startBtn"  Content="{prop:LocalizationExtension startRepairmentBtn}" Click="startBtn_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,50,20,10" />
+
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="{prop:LocalizationExtension unfinishedHdr}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.7*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid x:Name="unfinishedRepGrid" AutoGenerateColumns = "False"  Height="165" VerticalAlignment="Top" Grid.ColumnSpan="5">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="repId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdPopravke}" IsReadOnly="True" Width="0.15*" CanUserResize="False"/>
+                            <DataGridTextColumn x:Name="reportoId" Header="{prop:LocalizationExtension reportIdHdr}" Binding="{Binding IdPrijave}" IsReadOnly="True" Width="0.15*" CanUserResize="False" />
+                            <DataGridTextColumn x:Name="startDate" Header="{prop:LocalizationExtension beginingHdr}" Binding="{Binding Pocetak}" IsReadOnly="True" Width="*" CanUserResize="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <ComboBox Grid.Column="0" Grid.Row="1" Margin="10,10,10,130" x:Name="servicesCB" DisplayMemberPath="Naziv"/>
+                    <ComboBox Grid.Column="0" Grid.Row="1" Margin="10,65,10,75" x:Name="sparePartsCB" DisplayMemberPath="Naziv"/>
+
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="serviceAmount"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,65,10,75" x:Name="sparePartAmount" />
+
+                    <Button Grid.Column="2" Grid.Row="1" Margin="10,10,10,130" x:Name="addServiceBtn" Content="{prop:LocalizationExtension addServiceBtn}" Click="addServiceBtn_Click"/>
+                    <Button Grid.Column="2" Grid.Row="1" Margin="10,65,10,75" x:Name="addSparePartBtn" Content="{prop:LocalizationExtension addSparePartBtn}" Click="addSparePartBtn_Click"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

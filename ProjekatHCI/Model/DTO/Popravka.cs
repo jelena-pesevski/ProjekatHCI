@@ -15,6 +15,12 @@ namespace ProjekatHCI.Model.DTO
         public DateTime Zavrsetak { get; set; }
         public bool Zavrseno { get; set; }
 
+        public Popravka(int idZaposlenog, int idPrijave)
+        {
+            IdZaposlenog = idZaposlenog;
+            IdPrijave = idPrijave;
+        }
+
         public Popravka(int idPopravke, int idZaposlenog, int idPrijave, DateTime pocetak, DateTime zavrsetak, bool zavrseno)
         {
             IdPopravke = idPopravke;
@@ -22,6 +28,15 @@ namespace ProjekatHCI.Model.DTO
             IdPrijave = idPrijave;
             Pocetak = pocetak;
             Zavrsetak = zavrsetak;
+            Zavrseno = zavrseno;
+        }
+
+        public Popravka(int idPopravke, int idZaposlenog, int idPrijave, DateTime pocetak, bool zavrseno)
+        {
+            IdPopravke = idPopravke;
+            IdZaposlenog = idZaposlenog;
+            IdPrijave = idPrijave;
+            Pocetak = pocetak;
             Zavrseno = zavrseno;
         }
 

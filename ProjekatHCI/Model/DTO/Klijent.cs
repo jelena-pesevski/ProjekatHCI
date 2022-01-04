@@ -14,6 +14,11 @@ namespace ProjekatHCI.Model.DTO
         public string Adresa { get; set; }
         public string Telefon { get; set; }
 
+        public Klijent(int idKlijenta)
+        {
+            IdKlijenta = idKlijenta;
+        }
+
         public Klijent(int idKlijenta, string ime, string prezime, string adresa, string telefon)
         {
             IdKlijenta = idKlijenta;

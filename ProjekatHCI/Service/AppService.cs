@@ -13,6 +13,10 @@ namespace ProjekatHCI.Service
     {
         public static Zaposleni CurrEmployee { get; set; }
 
+        public static Majstor CurrMajstor { get; set; }
+
+        public static int CurrEmployeeId { get { return CurrEmployee.IdZaposlenog;} }
+
         public static void SetTheme()
         {
             int themeNum = CurrEmployee.Tema;

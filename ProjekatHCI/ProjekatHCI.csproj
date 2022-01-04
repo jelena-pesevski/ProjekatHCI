@@ -70,8 +70,14 @@
     <Compile Include="AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ClientDetailsWindow.xaml.cs">
+      <DependentUpon>ClientDetailsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ConfirmationBox.xaml.cs">
       <DependentUpon>ConfirmationBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DescriptionInput.xaml.cs">
+      <DependentUpon>DescriptionInput.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -120,7 +126,13 @@
       <DependentUpon>Resource.sr.resx</DependentUpon>
     </Compile>
     <Compile Include="Service\AppService.cs" />
+    <Compile Include="Service\KlijentService.cs" />
     <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\MajstorService.cs" />
+    <Compile Include="Service\PopravkaRezervniDioService.cs" />
+    <Compile Include="Service\PopravkaService.cs" />
+    <Compile Include="Service\PopravkaUslugaService.cs" />
+    <Compile Include="Service\PrijavaKvaraService.cs" />
     <Compile Include="Service\RezervniDioService.cs" />
     <Compile Include="Service\UslugaService.cs" />
     <Compile Include="Service\ZaposleniService.cs" />
@@ -132,7 +144,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ClientDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ConfirmationBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DescriptionInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

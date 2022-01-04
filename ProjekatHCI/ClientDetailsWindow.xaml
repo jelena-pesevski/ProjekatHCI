@@ -1,0 +1,25 @@
+﻿<Window x:Class="ProjekatHCI.ClientDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjekatHCI"
+        xmlns:prop="clr-namespace:ProjekatHCI.Util"
+        mc:Ignorable="d"
+        Title="ClientDetailsWindow" Height="200" Width="280" Style="{DynamicResource MainWindowStyle}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="{prop:LocalizationExtension firstnameLbl}" Grid.Column="0" Margin="20,20, 0, 0" />
+        <Label Content="{prop:LocalizationExtension lastnameLbl}" Grid.Column="0" Margin="20, 50, 0, 0" />
+        <Label Content="{prop:LocalizationExtension addressLbl}" Grid.Column="0"  Margin="20, 80, 0, 0"/>
+        <Label Content="{prop:LocalizationExtension phoneLbl}" Grid.Column="0" Margin="20, 110, 0, 0"/>
+
+        <Label Grid.Column="1" x:Name="firstname" Margin="20,20, 0, 0"/>
+        <Label Grid.Column="1" x:Name="lastname"  Margin="20,50, 0, 0"/>
+        <Label Grid.Column="1" x:Name="address" Margin="20,80, 0, 0"/>
+        <Label Grid.Column="1" x:Name="phone" Margin="20,110, 0, 0"/>
+    </Grid>
+</Window>

@@ -55,5 +55,12 @@ namespace ProjekatHCI.Model.DAO
             command.Parameters.AddWithValue("@IdUsluge", t.IdUsluge);
             return command;
         }
+
+        protected async override Task PostInsertQuery(Usluga t, long lastInsertedId, MySqlConnection conn)
+        {
+            t.IdUsluge = (int)lastInsertedId;
+        }
     }
+
+
 }

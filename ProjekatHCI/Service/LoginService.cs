@@ -20,6 +20,11 @@ namespace ProjekatHCI.Service
                 if(username.Equals(z.KorisnickoIme) && password.Equals(z.Lozinka))
                 {
                     AppService.CurrEmployee = z;
+                    if ("M".Equals(z.Tip))
+                    {
+                        AppService.CurrMajstor = await MajstorService.GetOne(new Model.DTO.Majstor(AppService.CurrEmployeeId));
+                    }
+
                     AppService.SetTheme();
                     if (!z.Jezik.Equals(language))
                     {

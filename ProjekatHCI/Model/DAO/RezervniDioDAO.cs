@@ -57,5 +57,10 @@ namespace ProjekatHCI.Model.DAO
             command.Parameters.AddWithValue("@Sifra", t.Sifra);
             return command;
         }
+
+        protected async override Task PostInsertQuery(RezervniDio t, long lastInsertedId, MySqlConnection conn)
+        {
+            t.Sifra = (int)lastInsertedId;
+        }
     }
 }

@@ -13,12 +13,12 @@ namespace ProjekatHCI.Model.DAO
     {
         protected override string getTableName()
         {
-            throw new NotImplementedException();
+            return "majstor";
         }
 
         protected override Majstor ParseLine(DbDataReader reader)
         {
-            throw new NotImplementedException();
+            return new Majstor(reader.GetInt32(0), reader.GetInt32(1));
         }
 
         protected override MySqlCommand PrepareDeleteCommand(Majstor t, MySqlConnection conn)
@@ -31,7 +31,10 @@ namespace ProjekatHCI.Model.DAO
 
         protected override MySqlCommand PrepareGetOneByIdCommand(Majstor t, MySqlConnection conn)
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM majstor WHERE IdZaposlenog=@IdZaposlenog";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.Parameters.AddWithValue("@IdZaposlenog", t.IdZaposlenog);
+            return command;
         }
 
         protected override MySqlCommand PrepareInsertCommand(Majstor t, MySqlConnection conn)

@@ -46,6 +46,8 @@ namespace ProjekatHCI
                         RepairmanWindow win = new RepairmanWindow();
                         win.Show();
                         this.Close();
+
+                        
                     }
                     else
                     {

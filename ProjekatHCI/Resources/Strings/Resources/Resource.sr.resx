@@ -123,6 +123,21 @@
   <data name="addFailedMsg" xml:space="preserve">
     <value>Greška! Podatak ne može biti dodan!</value>
   </data>
+  <data name="addFaultReportBtn" xml:space="preserve">
+    <value>Dodaj prijavu kvara</value>
+  </data>
+  <data name="addressHdr" xml:space="preserve">
+    <value>Adresa</value>
+  </data>
+  <data name="addressLbl" xml:space="preserve">
+    <value>Adresa:</value>
+  </data>
+  <data name="addServiceBtn" xml:space="preserve">
+    <value>Dodaj uslugu</value>
+  </data>
+  <data name="addSparePartBtn" xml:space="preserve">
+    <value>Dodaj rezervni dio</value>
+  </data>
   <data name="addSuccessMsg" xml:space="preserve">
     <value>Uspješno dodavanje!</value>
   </data>
@@ -132,11 +147,20 @@
   <data name="amountLbl" xml:space="preserve">
     <value>Količina:</value>
   </data>
+  <data name="beginingHdr" xml:space="preserve">
+    <value>Početak</value>
+  </data>
   <data name="beigeTheme" xml:space="preserve">
     <value>Bež</value>
   </data>
   <data name="blueTheme" xml:space="preserve">
     <value>Plava</value>
+  </data>
+  <data name="clientIdHdr" xml:space="preserve">
+    <value>KlijentId</value>
+  </data>
+  <data name="clientsHdr" xml:space="preserve">
+    <value>Klijenti</value>
   </data>
   <data name="codeHdr" xml:space="preserve">
     <value>Šifra</value>
@@ -147,6 +171,9 @@
   <data name="costLbl" xml:space="preserve">
     <value>Cijena:</value>
   </data>
+  <data name="dateHdr" xml:space="preserve">
+    <value>Datum i vrijeme</value>
+  </data>
   <data name="deleteBtn" xml:space="preserve">
     <value>Obriši</value>
   </data>
@@ -155,6 +182,12 @@
   </data>
   <data name="deleteSuccessMsg" xml:space="preserve">
     <value>Uspješno brisanje!</value>
+  </data>
+  <data name="descriptionHdr" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="descriptionLbl" xml:space="preserve">
+    <value>Opis:</value>
   </data>
   <data name="empolyeesHdr" xml:space="preserve">
     <value>Zaposleni</value>
@@ -165,8 +198,14 @@
   <data name="emptyFieldsWarn" xml:space="preserve">
     <value>Sva polja moraju biti ispravno popunjena!</value>
   </data>
+  <data name="endingHdr" xml:space="preserve">
+    <value>Završetak</value>
+  </data>
   <data name="enLbl" xml:space="preserve">
     <value>Engleski</value>
+  </data>
+  <data name="faultReportsHdr" xml:space="preserve">
+    <value>Prijave kvarova</value>
   </data>
   <data name="firstnameHdr" xml:space="preserve">
     <value>Ime</value>
@@ -210,11 +249,20 @@
   <data name="numOfObligationsHdr" xml:space="preserve">
     <value>BrojZaduženja</value>
   </data>
+  <data name="operatorIdHdr" xml:space="preserve">
+    <value>OperaterId</value>
+  </data>
   <data name="passwordHdr" xml:space="preserve">
     <value>Lozinka</value>
   </data>
   <data name="passwrdLbl" xml:space="preserve">
     <value>Lozinka:</value>
+  </data>
+  <data name="phoneHdr" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="phoneLbl" xml:space="preserve">
+    <value>Telefon:</value>
   </data>
   <data name="priceHdr" xml:space="preserve">
     <value>Cijena</value>
@@ -222,8 +270,23 @@
   <data name="purpleTheme" xml:space="preserve">
     <value>Ljubičasta</value>
   </data>
+  <data name="repairmanIdHdr" xml:space="preserve">
+    <value>MajstorId</value>
+  </data>
+  <data name="repairmentStartError" xml:space="preserve">
+    <value>Popravka ne može biti započeta</value>
+  </data>
+  <data name="repairmentStartSuccess" xml:space="preserve">
+    <value>Popravka je započeta</value>
+  </data>
+  <data name="reportIdHdr" xml:space="preserve">
+    <value>Id Prijave</value>
+  </data>
   <data name="servicesHdr" xml:space="preserve">
     <value>Usluge</value>
+  </data>
+  <data name="showDetailsBtn" xml:space="preserve">
+    <value>Prikaži detalje</value>
   </data>
   <data name="sparePartsHdr" xml:space="preserve">
     <value>Rezervni dijelovi</value>
@@ -231,17 +294,26 @@
   <data name="srLbl" xml:space="preserve">
     <value>Srpski</value>
   </data>
+  <data name="startRepairmentBtn" xml:space="preserve">
+    <value>Započni popravku</value>
+  </data>
   <data name="statusHdr" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="statusLbl" xml:space="preserve">
     <value>Status:</value>
   </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
   <data name="typeHdr" xml:space="preserve">
     <value>Tip</value>
   </data>
   <data name="typeLbl" xml:space="preserve">
     <value>Tip:</value>
+  </data>
+  <data name="unfinishedHdr" xml:space="preserve">
+    <value>Nezavršene popravke</value>
   </data>
   <data name="updateBtn" xml:space="preserve">
     <value>Ažuriraj</value>

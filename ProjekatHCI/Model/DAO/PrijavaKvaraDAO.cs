@@ -18,7 +18,7 @@ namespace ProjekatHCI.Model.DAO
 
         protected override PrijavaKvara ParseLine(DbDataReader reader)
         {
-            return new PrijavaKvara(reader.GetInt32(0), reader.GetDateTime(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetInt32(6));
+            return new PrijavaKvara(reader.GetInt32(0), reader.GetDateTime(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetString(6));
         }
 
         protected override MySqlCommand PrepareDeleteCommand(PrijavaKvara t, MySqlConnection conn)
@@ -49,7 +49,13 @@ namespace ProjekatHCI.Model.DAO
 
         protected override MySqlCommand PrepareUpdateCommand(PrijavaKvara t, MySqlConnection conn)
         {
-            throw new NotImplementedException();
+            string query = @"UPDATE prijavakvara SET Opis=@Opis, Majstor_IdZaposlenog=@IdMajstora, Status=@Status WHERE IdPrijave=@IdPrijave;";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.Parameters.AddWithValue("@Opis", t.Opis);
+            command.Parameters.AddWithValue("@IdMajstora", t.Majstor_IdZaposlenog);
+            command.Parameters.AddWithValue("@Status", t.Status);
+            command.Parameters.AddWithValue("@IdPrijave", t.IdPrijave);
+            return command;
         }
 
         protected async override Task PostInsertQuery(PrijavaKvara t, long lastInsertedId, MySqlConnection conn)

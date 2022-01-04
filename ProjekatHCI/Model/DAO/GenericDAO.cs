@@ -86,7 +86,7 @@ namespace ProjekatHCI.Model.DAO
                     MySqlCommand command = PrepareInsertCommand(t, conn);
                     result = await command.ExecuteNonQueryAsync();
 
-                    PostInsertQuery(t, command.LastInsertedId, conn);
+                    if(result>0) PostInsertQuery(t, command.LastInsertedId, conn);
                 }catch(Exception e)
                 {
                     Console.WriteLine(e.StackTrace);

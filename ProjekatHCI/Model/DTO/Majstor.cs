@@ -15,6 +15,10 @@ namespace ProjekatHCI.Model.DTO
 
         }
 
+        public Majstor(int idZaposlenog, int brZaduzenja) : base(idZaposlenog)
+        {
+            BrojZaduzenja = brZaduzenja;
+        }
 
         public Majstor(int idZaposlenog, string ime, string prezime, string korisnickoIme, string lozinka, string tip, int tema, string jezik, string status) : base(idZaposlenog, ime, prezime, korisnickoIme, lozinka, tip, tema, jezik, status)
         {
