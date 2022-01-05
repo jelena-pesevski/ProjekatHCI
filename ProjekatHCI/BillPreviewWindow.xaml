@@ -1,0 +1,35 @@
+﻿<Window x:Class="ProjekatHCI.BillPreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjekatHCI"
+        mc:Ignorable="d"
+        xmlns:prop="clr-namespace:ProjekatHCI.Util"
+        Title="" Height="450" Width="550" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
+    <Grid Margin="10,5,10,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0" x:Name="servicesDataGrid" AutoGenerateColumns = "False" Height="170" VerticalAlignment="Top" CanUserResizeColumns="False" CanUserDeleteRows="False" RowEditEnding="servicesDataGrid_RowEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="serviceNameCol" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" IsReadOnly="True" Width="*"  />
+                <DataGridTextColumn x:Name="serviceCostCol"  Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena, StringFormat=N2, ValidatesOnExceptions=True}" IsReadOnly="True" Width="*" />
+                <DataGridTextColumn x:Name="serviceAmountCol" Header="{prop:LocalizationExtension amountHdr}" Binding="{Binding Kolicina,  ValidatesOnExceptions=True}" IsReadOnly="False" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="deleteUslugaBtn" Content="{prop:LocalizationExtension deleteBtn}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Width="94" Margin="0,0,0,5"  Click="deleteUslugaBtn_Click"/>
+
+        <DataGrid Grid.Row="1" x:Name="partsDataGrid" AutoGenerateColumns = "False" Height="170" VerticalAlignment="Top" CanUserResizeColumns="False" CanUserDeleteRows="False" RowEditEnding="partsDataGrid_RowEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="partNameCol" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" IsReadOnly="True" Width="*"  />
+                <DataGridTextColumn x:Name="partCostCol"  Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena, StringFormat=N2, ValidatesOnExceptions=True}" IsReadOnly="True" Width="*" />
+                <DataGridTextColumn x:Name="partAmountCol" Header="{prop:LocalizationExtension amountHdr}" Binding="{Binding Kolicina,  ValidatesOnExceptions=True}" IsReadOnly="False" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="deleteRezDioBtn" Grid.Row="1" Content="{prop:LocalizationExtension deleteBtn}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Width="94" Margin="0,0,0,5" Click="deleteRezDioBtn_Click"/>
+    </Grid>
+</Window>

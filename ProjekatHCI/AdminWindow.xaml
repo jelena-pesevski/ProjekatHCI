@@ -37,7 +37,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid x:Name="employeesDataGrid" AutoGenerateColumns = "False"  Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="employeesDataGrid_RowEditEnding" >
+                    <DataGrid x:Name="employeesDataGrid" AutoGenerateColumns = "False"  Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="employeesDataGrid_RowEditEnding" CanUserDeleteRows="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="empId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdZaposlenog}" IsReadOnly="True" Width="0.25*" />
                             <DataGridTextColumn x:Name="empFirstName" Header="{prop:LocalizationExtension firstnameHdr}" Binding="{Binding Ime}" IsReadOnly="False" Width="*" />
@@ -61,10 +61,10 @@
                     <Label Content="{prop:LocalizationExtension typeLbl}" Grid.Column="2" Grid.Row="1" Margin="10,10,0,130"/>
                     <Label Content="{prop:LocalizationExtension statusLbl}" Grid.Column="2" Grid.Row="1" Margin="10,45,0,95"/>
 
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="firstname"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="lastname" />
-                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,80,10,60" x:Name="username" />
-                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,115,10,25" x:Name="password" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="firstname" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="lastname" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,80,10,60" x:Name="username" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,115,10,25" x:Name="password" VerticalContentAlignment="Center"/>
                     <ComboBox Grid.Column="3" Grid.Row="1" Margin="10,10,10,130" x:Name="type">
                         <ComboBoxItem Name="A" Content="Admin" />
                         <ComboBoxItem Name="M" Content="Majstor" />
@@ -90,7 +90,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="servicesDataGrid" AutoGenerateColumns = "False" Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="servicesDataGrid_RowEditEnding">
+                    <DataGrid x:Name="servicesDataGrid" AutoGenerateColumns = "False" Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="servicesDataGrid_RowEditEnding" CanUserDeleteRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="serviceIdCol" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdUsluge}" IsReadOnly="True" Width="0.25*" />
                             <DataGridTextColumn x:Name="serviceNameCol" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" IsReadOnly="False" Width="*"  />
@@ -103,8 +103,8 @@
 
                     <Label Content="{prop:LocalizationExtension nameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,10,0,130"/>
                     <Label Content="{prop:LocalizationExtension costLbl}" Grid.Column="0" Grid.Row="1" Margin="10,45,0,95"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="serviceName"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="serviceCost" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="serviceName" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="serviceCost" VerticalContentAlignment="Center" />
 
                 </Grid>
             </TabItem>
@@ -122,7 +122,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="sparePartsDataGrid" AutoGenerateColumns = "False" Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="sparePartsDataGrid_RowEditEnding">
+                    <DataGrid x:Name="sparePartsDataGrid" AutoGenerateColumns = "False" Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="sparePartsDataGrid_RowEditEnding" CanUserDeleteRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="sparePartCode" Header="{prop:LocalizationExtension codeHdr}" Binding="{Binding Sifra}" IsReadOnly="True" Width="0.25*" />
                             <DataGridTextColumn x:Name="sparePartName" Header="{prop:LocalizationExtension nameHdr}" Binding="{Binding Naziv}" IsReadOnly="False" Width="*"  />
@@ -138,9 +138,37 @@
                     <Label Content="{prop:LocalizationExtension costLbl}" Grid.Column="0" Grid.Row="1" Margin="10,45,0,95"/>
                     <Label Content="{prop:LocalizationExtension amountLbl}" Grid.Column="0" Grid.Row="1" Margin="10,80,0,60"/>
 
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="partName"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="partCost" />
-                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,80,10,60" x:Name="partAmount" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="partName" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="partCost" VerticalContentAlignment="Center" />
+                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,80,10,60" x:Name="partAmount" VerticalContentAlignment="Center"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="{prop:LocalizationExtension repairmentsHdr}">
+                <Grid>
+                    <DataGrid x:Name="repairmentsDataGrid" AutoGenerateColumns = "False" Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" CanUserDeleteRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="repId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdPopravke}" IsReadOnly="True" Width="0.25*" />
+                            <DataGridTextColumn x:Name="repairmanId" Header="{prop:LocalizationExtension repairmanIdHdr}" Binding="{Binding IdZaposlenog}" IsReadOnly="True" Width="0.4*"  />
+                            <DataGridTextColumn x:Name="reportId" Header="{prop:LocalizationExtension reportIdHdr}" Binding="{Binding IdPrijave}" IsReadOnly="True" Width="0.4*"  />
+                            <DataGridTextColumn x:Name="begin" Header="{prop:LocalizationExtension beginingHdr}" Binding="{Binding Pocetak}" IsReadOnly="True" Width="*" />
+                            <DataGridTextColumn x:Name="end" Header="{prop:LocalizationExtension endingHdr}" Binding="{Binding Zavrsetak ,TargetNullValue=''}" IsReadOnly="True" Width="*" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+             
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="{prop:LocalizationExtension billsHdr}">
+                <Grid>
+                    <DataGrid x:Name="billsDataGrid" AutoGenerateColumns = "False" Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" CanUserDeleteRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="billId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdRacuna}" IsReadOnly="True" Width="0.25*" />
+                            <DataGridTextColumn x:Name="repairmentId" Header="{prop:LocalizationExtension repairmanIdHdr}" Binding="{Binding IdPopravke}" IsReadOnly="True" Width="0.4*"  />
+                            <DataGridTextColumn x:Name="cost" Header="{prop:LocalizationExtension priceHdr}" Binding="{Binding Cijena}" IsReadOnly="True" Width="*"  />
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
         </TabControl>

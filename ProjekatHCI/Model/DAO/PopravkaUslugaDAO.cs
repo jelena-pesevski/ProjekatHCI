@@ -13,12 +13,12 @@ namespace ProjekatHCI.Model.DAO
     {
         protected override string getTableName()
         {
-            throw new NotImplementedException();
+            return "popravka_usluga";
         }
 
         protected override PopravkaUsluga ParseLine(DbDataReader reader)
         {
-            throw new NotImplementedException();
+            return new PopravkaUsluga(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetDouble(3));
         }
 
         protected override MySqlCommand PrepareDeleteCommand(PopravkaUsluga t, MySqlConnection conn)
@@ -32,7 +32,11 @@ namespace ProjekatHCI.Model.DAO
 
         protected override MySqlCommand PrepareGetOneByIdCommand(PopravkaUsluga t, MySqlConnection conn)
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM popravka_usluga WHERE IdPopravke=@IdPopravke AND IdUsluge=@IdUsluge";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.Parameters.AddWithValue("@IdPopravke", t.IdPopravke);
+            command.Parameters.AddWithValue("@IdUsluge", t.IdUsluge);
+            return command;
         }
 
         protected override MySqlCommand PrepareInsertCommand(PopravkaUsluga t, MySqlConnection conn)

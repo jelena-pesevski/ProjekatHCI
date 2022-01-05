@@ -66,7 +66,6 @@ namespace ProjekatHCI
                 if (p != null)
                 {
                     faultReports.Add(p);
-                    Console.WriteLine(p.IdPrijave);
                 }
             }
 
@@ -144,6 +143,7 @@ namespace ProjekatHCI
                     if (res)
                     {
                         faultReportsDataGrid.Items.Refresh();
+                        UpdateUnfinishedRepairments();
                         MessageBox.Show(mngr.GetString("repairmentStartSuccess", TranslationSource.Instance.CurrentCulture));
                     }
                     else
@@ -155,7 +155,7 @@ namespace ProjekatHCI
                 {
                     MessageBox.Show(mngr.GetString("repairmentStartError", TranslationSource.Instance.CurrentCulture));
                 }
-
+                faultReportsDataGrid.SelectedItem = null;
             }
         }
 
@@ -167,6 +167,7 @@ namespace ProjekatHCI
                 Klijent k = await KlijentService.GetOne(new Klijent(selectedItem.IdKlijenta));
                 ClientDetailsWindow cdw = new ClientDetailsWindow(k);
                 cdw.Show();
+                faultReportsDataGrid.SelectedItem = null;
             }
         }
 
@@ -189,7 +190,13 @@ namespace ProjekatHCI
                     }
 
                     PopravkaUsluga pu = new PopravkaUsluga(selectedPopravka.IdPopravke, selectedItem.IdUsluge, value, selectedItem.Cijena);
-                    Boolean result = await PopravkaUslugaService.AddUsluga(pu);
+                    Boolean result = false;
+                    result = await PopravkaUslugaService.UpdateIfExists(pu);
+                    if (!result)
+                    {
+                        result = await PopravkaUslugaService.AddUsluga(pu);
+                    }
+                     
 
                     if (result)
                     {
@@ -200,15 +207,123 @@ namespace ProjekatHCI
                         MessageBox.Show(mngr.GetString("addFailedMsg", TranslationSource.Instance.CurrentCulture));
                     }
                 }
+
+                unfinishedRepGrid.SelectedItem = null;
             }
 
-            servicesCB.SelectedIndex = -1;
+         //   servicesCB.SelectedIndex = -1;
             serviceAmount.Text = "";
         }
 
-        private void addSparePartBtn_Click(object sender, RoutedEventArgs e)
+        private async void addSparePartBtn_Click(object sender, RoutedEventArgs e)
         {
             //gledati koliko je dostupno rezervnog dijela
+            //dodatna provjera je u bazi za svaki slucaj
+            Popravka selectedPopravka = (Popravka)unfinishedRepGrid.SelectedItem;
+            RezervniDio selectedItem = (RezervniDio)sparePartsCB.SelectedItem;
+            if (selectedPopravka != null && selectedItem != null)
+            {
+                if (!String.IsNullOrEmpty(sparePartAmount.Text))
+                {
+                    int value = 0;
+                    try
+                    {
+                        value = Int32.Parse(sparePartAmount.Text);
+                    }
+                    catch (Exception ex)
+                    {
+                        return;
+                    }
+
+                   // if (value > selectedItem.Kolicina) { return; }
+
+                    PopravkaRezervniDio pr = new PopravkaRezervniDio(selectedPopravka.IdPopravke, selectedItem.Sifra, value, selectedItem.Cijena);
+                    Boolean result = false;
+                    result = await PopravkaRezervniDioService.UpdateIfExists(pr);
+                    if (!result)
+                    {
+                        result = await PopravkaRezervniDioService.AddRezDio(pr);
+                    }
+                    if (result)
+                    {
+                        MessageBox.Show(mngr.GetString("addSuccessMsg", TranslationSource.Instance.CurrentCulture));
+                        selectedItem.Kolicina = selectedItem.Kolicina - value;
+                        availableAmount.Content = selectedItem.Kolicina;
+                    }
+                    else
+                    {
+                        MessageBox.Show(mngr.GetString("addFailedMsg", TranslationSource.Instance.CurrentCulture));
+                    }
+
+                }
+                unfinishedRepGrid.SelectedItem = null;
+            }
+         //   sparePartsCB.SelectedIndex = -1;
+            sparePartAmount.Text = "";
+           
+        }
+
+        private async void sparePartsCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RezervniDio selectedItem = (RezervniDio)sparePartsCB.SelectedItem;
+            if (selectedItem != null)
+            {
+                RezervniDio mostRecent = await RezervniDioService.GetOne(selectedItem);
+                availableAmount.Content = mostRecent.Kolicina;
+                availableAmount.Visibility = Visibility.Visible;
+                //izmjena u listi ako je razlicito
+                if (selectedItem.Kolicina != mostRecent.Kolicina)
+                {
+                    selectedItem.Kolicina = mostRecent.Kolicina;
+                }
+            }
+        }
+
+        private async void finishBtn_Click(object sender, RoutedEventArgs e)
+        {     
+            Popravka selectedPopravka = (Popravka)unfinishedRepGrid.SelectedItem;
+            if (selectedPopravka != null)
+            {
+                await PopravkaService.FinishRepairment(selectedPopravka);
+                Racun r = new Racun(0, selectedPopravka.IdPopravke, 0.0);
+                Boolean result = await RacunService.AddRacun(r);
+
+                if (result)
+                {
+                    //insert stavke u racun
+                    await RacunService.PopulateBill(r);
+
+                    UpdateFaultReports();
+                    UpdateUnfinishedRepairments();
+                    MessageBox.Show(mngr.GetString("repairmentFinishedSuccessMsg", TranslationSource.Instance.CurrentCulture));
+
+                    Racun updated = await RacunService.GetOne(r);
+                    RacunWindow win = new RacunWindow(updated);
+                    win.Show();
+                }
+                else
+                {
+                    MessageBox.Show(mngr.GetString("repairmentFinishFailMsg", TranslationSource.Instance.CurrentCulture));
+                }
+
+                unfinishedRepGrid.SelectedItem = null;
+            }
+        }
+
+        private void previewBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Popravka selectedPopravka = (Popravka)unfinishedRepGrid.SelectedItem;
+            if (selectedPopravka != null)
+            {
+                servicesCB.SelectedIndex = -1;
+                sparePartsCB.SelectedIndex = -1;
+                availableAmount.Content = "";
+
+                BillPreviewWindow win = new BillPreviewWindow(selectedPopravka);
+                win.Show();
+                unfinishedRepGrid.SelectedItem = null;
+            }
+          
         }
     }
 }

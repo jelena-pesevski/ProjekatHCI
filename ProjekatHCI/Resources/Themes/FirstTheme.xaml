@@ -8,16 +8,31 @@
             <Style TargetType="{x:Type Label}">
                 <Setter Property="FontWeight" Value="DemiBold"/>
                 <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="Arial"/>
             </Style>
-
-            <Style TargetType="{x:Type Button}">
-                <Setter Property="Background" Value="White" />
-                <Setter Property="FontSize" Value="15" />
+            <Style TargetType="{x:Type ComboBox}">
+                  
+                <Setter Property="FontFamily" Value="Arial"/>
                 <Style.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
                     </Style>
                 </Style.Resources>
+            </Style>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="Arial"/>
+            </Style>
+
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Style.Resources>
+              
             </Style>
         </Style.Resources>
 
@@ -27,6 +42,8 @@
 
     <Style TargetType="Window" x:Key="MainWindowStyle">
         <Setter Property="Background" Value="#bad1d9" />
+        
+        
         <Style.Resources>
             <Style TargetType="{x:Type DataGridRow}">
                 <Style.Resources>
@@ -36,7 +53,36 @@
                     <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="Black" />
                 </Style.Resources>
             </Style>
+
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="Arial"/>
+            </Style>
+            <Style TargetType="{x:Type ComboBox}">
+
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="Arial"/>
+            </Style>
+
+
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Style.Resources>
+
+            </Style>
         </Style.Resources>
+        
+        
     </Style>
     
     

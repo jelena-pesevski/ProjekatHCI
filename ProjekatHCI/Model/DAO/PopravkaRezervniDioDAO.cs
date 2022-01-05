@@ -13,22 +13,30 @@ namespace ProjekatHCI.Model.DAO
     {
         protected override string getTableName()
         {
-            throw new NotImplementedException();
+            return "popravka_rezervnidio";
         }
 
         protected override PopravkaRezervniDio ParseLine(DbDataReader reader)
         {
-            throw new NotImplementedException();
+            return new PopravkaRezervniDio(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3));
         }
 
         protected override MySqlCommand PrepareDeleteCommand(PopravkaRezervniDio t, MySqlConnection conn)
         {
-            throw new NotImplementedException();
+            string query = "DELETE FROM popravka_rezervnidio WHERE IdPopravke=@IdPopravke AND Sifra=@Sifra";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.Parameters.AddWithValue("@IdPopravke", t.IdPopravke);
+            command.Parameters.AddWithValue("@Sifra", t.Sifra);
+            return command;
         }
 
         protected override MySqlCommand PrepareGetOneByIdCommand(PopravkaRezervniDio t, MySqlConnection conn)
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM popravka_rezervnidio WHERE IdPopravke=@IdPopravke AND Sifra=@Sifra";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.Parameters.AddWithValue("@IdPopravke", t.IdPopravke);
+            command.Parameters.AddWithValue("@Sifra", t.Sifra);
+            return command;
         }
 
         protected override MySqlCommand PrepareInsertCommand(PopravkaRezervniDio t, MySqlConnection conn)
@@ -44,7 +52,7 @@ namespace ProjekatHCI.Model.DAO
 
         protected override MySqlCommand PrepareUpdateCommand(PopravkaRezervniDio t, MySqlConnection conn)
         {
-            string query = @"UPDATE popravka_usluga SET Cijena=@Cijena, Kolicina=@Kolicina WHERE IdPopravke=@IdPopravke AND Sifra=@Sifra";
+            string query = @"UPDATE popravka_rezervnidio SET Cijena=@Cijena, Kolicina=@Kolicina WHERE IdPopravke=@IdPopravke AND Sifra=@Sifra";
             MySqlCommand command = new MySqlCommand(query, conn);
             command.Parameters.AddWithValue("@IdPopravke", t.IdPopravke);
             command.Parameters.AddWithValue("@Sifra", t.Sifra);

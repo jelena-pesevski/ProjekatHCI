@@ -36,7 +36,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid x:Name="clientsDataGrid" AutoGenerateColumns = "False"  Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="clientsDataGrid_RowEditEnding"  >
+                    <DataGrid x:Name="clientsDataGrid" AutoGenerateColumns = "False"  Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="clientsDataGrid_RowEditEnding" CanUserDeleteRows="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="clientId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdKlijenta}" IsReadOnly="True" Width="0.25*" />
                             <DataGridTextColumn x:Name="clientFirstName" Header="{prop:LocalizationExtension firstnameHdr}" Binding="{Binding Ime}" IsReadOnly="False" Width="*" />
@@ -50,15 +50,15 @@
                     <Button x:Name="deleteBtnClient"  Content="{prop:LocalizationExtension deleteBtn}" Click="deleteBtnClient_Click" Grid.Column="4" Grid.Row="1" Height="40" Margin="20,50,20,50" />
                     <Button x:Name="addFaultReport"  Content="{prop:LocalizationExtension addFaultReportBtn}" Click="addFaultReport_Click" Grid.Column="4"  Grid.Row="1" Height="40" Margin="20,100,20,10"/>
 
-                    <Label Content="{prop:LocalizationExtension firstnameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,10,0,130"/>
+                    <Label Content="{prop:LocalizationExtension firstnameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,10,0,130" />
                     <Label Content="{prop:LocalizationExtension lastnameLbl}" Grid.Column="0" Grid.Row="1" Margin="10,45,0,95"/>
                     <Label Content="{prop:LocalizationExtension addressLbl}" Grid.Column="0" Grid.Row="1" Margin="10,80,0,60"/>
                     <Label Content="{prop:LocalizationExtension phoneLbl}" Grid.Column="0" Grid.Row="1" Margin="10,115,0,25"/>
 
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="firstname"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="lastname" />
-                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,80,10,60" x:Name="address" />
-                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,115,10,25" x:Name="phone" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="firstname" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="10,45,10,95" x:Name="lastname" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,80,10,60" x:Name="address" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1"  Margin="10,115,10,25" x:Name="phone" VerticalContentAlignment="Center"/>
                 </Grid>
             </TabItem>
 
@@ -76,14 +76,14 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid x:Name="faultReportsDataGrid" AutoGenerateColumns = "False"  Height="210" VerticalAlignment="Top" Grid.ColumnSpan="5" RowEditEnding="faultReportsDataGrid_RowEditEnding">
+                    <DataGrid x:Name="faultReportsDataGrid" AutoGenerateColumns = "False"  Height="210" VerticalAlignment="Top" Grid.ColumnSpan="5" RowEditEnding="faultReportsDataGrid_RowEditEnding" CanUserDeleteRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="frId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdPrijave}" IsReadOnly="True" Width="0.15*" CanUserResize="False"/>
                             <DataGridTextColumn x:Name="frDate" Header="{prop:LocalizationExtension dateHdr}" Binding="{Binding DatumPrijave}" IsReadOnly="true" Width="0.6*" CanUserResize="False" />
                             <DataGridTextColumn x:Name="frDescription" Header="{prop:LocalizationExtension descriptionHdr}" Binding="{Binding Opis}" IsReadOnly="False" Width="0.8*" CanUserResize="True" />
                             <DataGridTextColumn x:Name="frStatus" Header="{prop:LocalizationExtension statusHdr}" Binding="{Binding Status}" IsReadOnly="true" Width="0.4*"  CanUserResize="True"/>
                             <DataGridTextColumn x:Name="frOpId" Header="{prop:LocalizationExtension operatorIdHdr}" Binding="{Binding Operater_IdZaposlenog}" IsReadOnly="True" Width="0.25*"  CanUserResize="False"/>
-                            <DataGridTextColumn x:Name="frRmId" Header="{prop:LocalizationExtension repairmanIdHdr}" Binding="{Binding Majstor_IdZaposlenog}" IsReadOnly="True" Width="0.27*"  CanUserResize="False"/>
+                            <DataGridTextColumn x:Name="frRmId" Header="{prop:LocalizationExtension repairmanIdHdr}" Binding="{Binding Majstor_IdZaposlenog}" IsReadOnly="True" Width="0.3*"  CanUserResize="False"/>
                             <DataGridTextColumn x:Name="frClId" Header="{prop:LocalizationExtension clientIdHdr}" Binding="{Binding IdKlijenta}" IsReadOnly="True" Width="0.20*"  CanUserResize="False"/>
                         </DataGrid.Columns>
                     </DataGrid>

@@ -47,5 +47,10 @@ namespace ProjekatHCI.Model.DAO
             throw new NotImplementedException();
         }
 
+        protected async override Task PostInsertQuery(Racun t, long lastInsertedId, MySqlConnection conn)
+        {
+            t.IdRacuna = (int)lastInsertedId;
+        }
+
     }
 }

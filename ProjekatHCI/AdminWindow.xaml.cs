@@ -28,7 +28,8 @@ namespace ProjekatHCI
         private List<Zaposleni> employees= new List<Zaposleni>();
         private List<Usluga> services=new List<Usluga>();
         private List<RezervniDio> spareParts=new List<RezervniDio>();
-
+        private List<Popravka> repairments = new List<Popravka>();
+        private List<Racun> bills = new List<Racun>();
         public AdminWindow()
         {
             InitializeComponent();
@@ -64,6 +65,8 @@ namespace ProjekatHCI
             employeesDataGrid.ItemsSource = employees;
             servicesDataGrid.ItemsSource = services;
             sparePartsDataGrid.ItemsSource = spareParts;
+            repairmentsDataGrid.ItemsSource = repairments;
+            billsDataGrid.ItemsSource = bills;
         }
 
         private async void UpdateEmployees()
@@ -109,11 +112,40 @@ namespace ProjekatHCI
             sparePartsDataGrid.Items.Refresh();
         }
 
+        private async void UpdateRepairments()
+        {
+            repairments.Clear();
+            foreach (Popravka p in await PopravkaService.GetAll())
+            {
+                if (p != null)
+                {
+                    repairments.Add(p);
+                }
+            }
+
+            repairmentsDataGrid.Items.Refresh();
+        }
+        private async void UpdateBills()
+        {
+            bills.Clear();
+            foreach (Racun r in await RacunService.GetAll())
+            {
+                if (r != null)
+                {
+                    bills.Add(r);
+                }
+            }
+
+            billsDataGrid.Items.Refresh();
+        }
+
         private async void UpdateDataGrids()
         {
             UpdateEmployees();
             UpdateServices();
             UpdateSpareParts();
+            UpdateRepairments();
+            UpdateBills();
         }
 
 

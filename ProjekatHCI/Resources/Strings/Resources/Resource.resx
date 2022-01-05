@@ -147,11 +147,20 @@
   <data name="amountLbl" xml:space="preserve">
     <value>Amount:</value>
   </data>
+  <data name="availableLbl" xml:space="preserve">
+    <value>Available:</value>
+  </data>
   <data name="beginingHdr" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="beigeTheme" xml:space="preserve">
     <value>Beige</value>
+  </data>
+  <data name="billPreviewBtn" xml:space="preserve">
+    <value>Bill preview</value>
+  </data>
+  <data name="billsHdr" xml:space="preserve">
+    <value>Bills</value>
   </data>
   <data name="blueTheme" xml:space="preserve">
     <value>Blue</value>
@@ -206,6 +215,9 @@
   </data>
   <data name="faultReportsHdr" xml:space="preserve">
     <value>Fault reports</value>
+  </data>
+  <data name="finishBtn" xml:space="preserve">
+    <value>Finish repairment</value>
   </data>
   <data name="firstnameHdr" xml:space="preserve">
     <value>Firstname</value>
@@ -273,6 +285,18 @@
   <data name="repairmanIdHdr" xml:space="preserve">
     <value>RepairmanId</value>
   </data>
+  <data name="repairmentFinishedSuccessMsg" xml:space="preserve">
+    <value>Repairment is finished!</value>
+  </data>
+  <data name="repairmentFinishFailMsg" xml:space="preserve">
+    <value>Error. Repairment can't be finished.</value>
+  </data>
+  <data name="repairmentId" xml:space="preserve">
+    <value>Repairment id</value>
+  </data>
+  <data name="repairmentsHdr" xml:space="preserve">
+    <value>Repairments</value>
+  </data>
   <data name="repairmentStartError" xml:space="preserve">
     <value>Repairment can't start</value>
   </data>
@@ -280,7 +304,7 @@
     <value>Repairment has started</value>
   </data>
   <data name="reportIdHdr" xml:space="preserve">
-    <value>Report Id</value>
+    <value>ReportId</value>
   </data>
   <data name="servicesHdr" xml:space="preserve">
     <value>Services</value>
@@ -302,6 +326,12 @@
   </data>
   <data name="statusLbl" xml:space="preserve">
     <value>Status:</value>
+  </data>
+  <data name="totalHdr" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="totalLbl" xml:space="preserve">
+    <value>Total:</value>
   </data>
   <data name="typeHdr" xml:space="preserve">
     <value>Type</value>

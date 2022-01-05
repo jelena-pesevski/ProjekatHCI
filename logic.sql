@@ -1,8 +1,4 @@
 -- trigeri
-ALTER TABLE zaposleni MODIFY Tema INTEGER;
-ALTER TABLE zaposleni ALTER Tema SET DEFAULT 1;
-
-
 delimiter $$
 create trigger postavi_zaposlenog after insert on zaposleni
 for each row
@@ -17,11 +13,50 @@ elseif (new.Tip='A') then
 end$$
 delimiter ;
 
+drop trigger umanji_kolicinu_rezervnog_dijela;
 delimiter $$
-create trigger umanji_kolicinu_rezervnog_dijela after insert on popravka_rezervnidio
+create trigger umanji_kolicinu_rezervnog_dijela before insert on popravka_rezervnidio
 for each row
 begin
-	update rezervnidio r set r.Kolicina=r.Kolicina-new.Kolicina where r.Sifra=new.Sifra;
+	set @dostupna_kolicina=(select Kolicina from rezervnidio r where r.Sifra=new.Sifra);
+    if(@dostupna_kolicina>=new.Kolicina) then
+		update rezervnidio r set r.Kolicina=r.Kolicina-new.Kolicina where r.Sifra=new.Sifra;
+	else 
+		signal sqlstate '45000';
+     end if;   
+end$$
+delimiter ;
+
+delimiter $$
+create trigger provjera_kolicine before update on popravka_rezervnidio
+for each row
+begin
+	set @dostupna_kolicina=(select Kolicina from rezervnidio r where r.Sifra=new.Sifra);
+    if(new.Kolicina!=old.Kolicina) then
+		if(@dostupna_kolicina<(new.Kolicina-old.Kolicina)) then
+			signal sqlstate '45000';
+		end if;
+    end if;
+end$$
+delimiter ;
+
+delimiter $$
+create trigger uvecaj_kolicinu_rezervnog_dijela after delete on popravka_rezervnidio
+for each row
+begin
+	update rezervnidio r set r.Kolicina=r.Kolicina+old.Kolicina where r.Sifra=old.Sifra;
+end$$
+delimiter ;
+
+delimiter $$
+create trigger izmijeni_kolicinu_rezervnog_dijela_update after update on popravka_rezervnidio
+for each row
+begin
+	if(new.Kolicina>old.Kolicina) then
+	update rezervnidio r set r.Kolicina=r.Kolicina-(new.Kolicina-old.Kolicina) where r.Sifra=new.Sifra;
+    elseif(new.Kolicina<old.Kolicina) then
+    update rezervnidio r set r.Kolicina=r.Kolicina+(old.Kolicina-new.Kolicina) where r.Sifra=new.Sifra;
+    end if;
 end$$
 delimiter ;
 
@@ -46,6 +81,16 @@ end$$
 delimiter ;
 
 delimiter $$
+create trigger umanji_zaduzenja_nakon_brisanja after delete on prijavakvara
+for each row
+begin
+	update majstor 
+	set BrojZaduzenja=BrojZaduzenja-1
+	where IdZaposlenog=old.Majstor_IdZaposlenog;
+end$$
+delimiter ;
+
+delimiter $$
 create procedure dodijeli_zaduzenje_majstoru(in pIdPrijave int(11))
 begin
 	set @majstor_id=(select m.IdZaposlenog from majstor m inner join zaposleni z on m.IdZaposlenog=z.IdZaposlenog 
@@ -64,18 +109,6 @@ begin
 end$$
 delimiter ;
 
-create view individualni_klijent_info as
-select i.IdKlijenta, Ime, Prezime, Adresa, BrojTelefona
-from individualni i
-inner join klijent k on i.IdKlijenta=k.IdKlijenta
-inner join telefonklijenta t on i.IdKlijenta=t.IdKlijenta;
-
-create view preduzece_klijent_info as
-select p.IdKlijenta, Naziv, Adresa, BrojTelefona
-from preduzeće p
-inner join klijent k on p.IdKlijenta=k.IdKlijenta
-inner join telefonklijenta t on p.IdKlijenta=t.IdKlijenta;
-
 create view zavrsene_popravke as
 select *
 from popravka
@@ -86,13 +119,14 @@ select m.IdZaposlenog, Ime, Prezime, Plata, Status, BrojZaduzenja
 from majstor m
 inner join zaposleni z on z.IdZaposlenog=m.idZaposlenog;
 
+
 create view nezavrsene_popravke_sa_opisom as
 select IdPopravke, IdZaposlenog, IdPrijave, Pocetak, Opis 
 from popravka 
 natural join prijavakvara
 where Zavrseno=0;
 
-delimiter $$zaposleniKorisničkoIme
+delimiter $$
 -- procedura koja unosi usluge u racun 
 create procedure unesi_usluge_u_racun(in pIdRacuna int(11), in pIdPopravke int(11))
 begin
@@ -159,3 +193,20 @@ create view stavke_dijelovi as
 select d.Naziv, s.Kolicina, s.Cijena, s.Kolicina*s.Cijena as Ukupno, s.IdRacuna
 from račun_stavka s
 inner join rezervnidio d on s.RezervniDio_Sifra=d.Sifra;
+
+create view stavke_pregled as
+select * from stavke_usluge u
+union select * from stavke_dijelovi d;
+select * from stavke_pregled;
+
+select * from pregled_usluge;
+create view pregled_usluge as
+select pu.IdPopravke, pu.IdUsluge, u.Naziv, pu.Cijena, pu.Kolicina
+from usluga u
+inner join popravka_usluga pu on u.IdUsluge=pu.IdUsluge;
+
+select * from pregled_rezervnidio;
+create view pregled_rezervnidio as
+select pr.IdPopravke, pr.Sifra, r.Naziv, pr.Cijena, pr.Kolicina
+from rezervnidio r
+inner join popravka_rezervnidio pr on r.Sifra=pr.Sifra;

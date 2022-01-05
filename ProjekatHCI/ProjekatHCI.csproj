@@ -70,6 +70,9 @@
     <Compile Include="AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BillPreviewWindow.xaml.cs">
+      <DependentUpon>BillPreviewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClientDetailsWindow.xaml.cs">
       <DependentUpon>ClientDetailsWindow.xaml</DependentUpon>
     </Compile>
@@ -90,10 +93,13 @@
     <Compile Include="Model\DAO\PopravkaDAO.cs" />
     <Compile Include="Model\DAO\PopravkaRezervniDioDAO.cs" />
     <Compile Include="Model\DAO\PopravkaUslugaDAO.cs" />
+    <Compile Include="Model\DAO\PregledRezervniDioDAO.cs" />
+    <Compile Include="Model\DAO\PregledUslugaDAO.cs" />
     <Compile Include="Model\DAO\PrijavaKvaraDAO.cs" />
     <Compile Include="Model\DAO\RacunDAO.cs" />
     <Compile Include="Model\DAO\RacunStavkaDAO.cs" />
     <Compile Include="Model\DAO\RezervniDioDAO.cs" />
+    <Compile Include="Model\DAO\StavkePregledDAO.cs" />
     <Compile Include="Model\DAO\UslugaDAO.cs" />
     <Compile Include="Model\DAO\ZaposleniDAO.cs" />
     <Compile Include="Model\DTO\Administrator.cs" />
@@ -103,14 +109,20 @@
     <Compile Include="Model\DTO\Popravka.cs" />
     <Compile Include="Model\DTO\PopravkaRezervniDio.cs" />
     <Compile Include="Model\DTO\PopravkaUsluga.cs" />
+    <Compile Include="Model\DTO\PregledRezervniDio.cs" />
+    <Compile Include="Model\DTO\PregledUsluga.cs" />
     <Compile Include="Model\DTO\PrijavaKvara.cs" />
     <Compile Include="Model\DTO\Racun.cs" />
     <Compile Include="Model\DTO\RacunStavka.cs" />
     <Compile Include="Model\DTO\RezervniDio.cs" />
+    <Compile Include="Model\DTO\StavkePregled.cs" />
     <Compile Include="Model\DTO\Usluga.cs" />
     <Compile Include="Model\DTO\Zaposleni.cs" />
     <Compile Include="OperatorWindow.xaml.cs">
       <DependentUpon>OperatorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RacunWindow.xaml.cs">
+      <DependentUpon>RacunWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="RepairmanWindow.xaml.cs">
       <DependentUpon>RepairmanWindow.xaml</DependentUpon>
@@ -132,8 +144,12 @@
     <Compile Include="Service\PopravkaRezervniDioService.cs" />
     <Compile Include="Service\PopravkaService.cs" />
     <Compile Include="Service\PopravkaUslugaService.cs" />
+    <Compile Include="Service\PregledRezervniDioService.cs" />
+    <Compile Include="Service\PregledUslugaService.cs" />
     <Compile Include="Service\PrijavaKvaraService.cs" />
+    <Compile Include="Service\RacunService.cs" />
     <Compile Include="Service\RezervniDioService.cs" />
+    <Compile Include="Service\StavkePregledService.cs" />
     <Compile Include="Service\UslugaService.cs" />
     <Compile Include="Service\ZaposleniService.cs" />
     <Compile Include="Util\ConnectionPool.cs" />
@@ -141,6 +157,10 @@
     <Compile Include="Util\LocalizationExtension.cs" />
     <Compile Include="Util\TranslationSource.cs" />
     <Page Include="AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BillPreviewWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,19 +180,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="OperatorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RacunWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

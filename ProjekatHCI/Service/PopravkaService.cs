@@ -25,6 +25,13 @@ namespace ProjekatHCI.Service
             }
         }
 
+        public async static Task<List<Popravka>> GetAll()
+        {
+            PopravkaDAO service = new PopravkaDAO();
+            List<Popravka> result = await service.GetAll();
+            return result;
+        }
+
         public async static Task<Popravka> GetOne(Popravka p)
         {
             PopravkaDAO service = new PopravkaDAO();
@@ -38,5 +45,12 @@ namespace ProjekatHCI.Service
             List<Popravka> result = await service.GetAllUnfinishedForRepairman(AppService.CurrMajstor);
             return result;
         }
+
+        public async static Task FinishRepairment(Popravka p)
+        {
+            PopravkaDAO service = new PopravkaDAO();
+            await service.finishRepairment(p);
+            return;
+        } 
     }
 }

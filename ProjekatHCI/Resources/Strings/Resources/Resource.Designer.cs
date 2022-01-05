@@ -151,6 +151,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Available:.
+        /// </summary>
+        public static string availableLbl {
+            get {
+                return ResourceManager.GetString("availableLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
         public static string beginingHdr {
@@ -165,6 +174,24 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string beigeTheme {
             get {
                 return ResourceManager.GetString("beigeTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bill preview.
+        /// </summary>
+        public static string billPreviewBtn {
+            get {
+                return ResourceManager.GetString("billPreviewBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bills.
+        /// </summary>
+        public static string billsHdr {
+            get {
+                return ResourceManager.GetString("billsHdr", resourceCulture);
             }
         }
         
@@ -327,6 +354,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string faultReportsHdr {
             get {
                 return ResourceManager.GetString("faultReportsHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finish repairment.
+        /// </summary>
+        public static string finishBtn {
+            get {
+                return ResourceManager.GetString("finishBtn", resourceCulture);
             }
         }
         
@@ -529,6 +565,42 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Repairment is finished!.
+        /// </summary>
+        public static string repairmentFinishedSuccessMsg {
+            get {
+                return ResourceManager.GetString("repairmentFinishedSuccessMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error. Repairment can&apos;t be finished..
+        /// </summary>
+        public static string repairmentFinishFailMsg {
+            get {
+                return ResourceManager.GetString("repairmentFinishFailMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repairment id.
+        /// </summary>
+        public static string repairmentId {
+            get {
+                return ResourceManager.GetString("repairmentId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repairments.
+        /// </summary>
+        public static string repairmentsHdr {
+            get {
+                return ResourceManager.GetString("repairmentsHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Repairment can&apos;t start.
         /// </summary>
         public static string repairmentStartError {
@@ -547,7 +619,7 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Report Id.
+        ///   Looks up a localized string similar to ReportId.
         /// </summary>
         public static string reportIdHdr {
             get {
@@ -615,6 +687,24 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string statusLbl {
             get {
                 return ResourceManager.GetString("statusLbl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string totalHdr {
+            get {
+                return ResourceManager.GetString("totalHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total:.
+        /// </summary>
+        public static string totalLbl {
+            get {
+                return ResourceManager.GetString("totalLbl", resourceCulture);
             }
         }
         

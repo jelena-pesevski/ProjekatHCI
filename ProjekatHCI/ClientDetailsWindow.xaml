@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjekatHCI"
         xmlns:prop="clr-namespace:ProjekatHCI.Util"
         mc:Ignorable="d"
-        Title="ClientDetailsWindow" Height="200" Width="280" Style="{DynamicResource MainWindowStyle}" WindowStartupLocation="CenterScreen">
+        Title="ClientDetailsWindow" Height="200" Width="280" ResizeMode="NoResize" Style="{DynamicResource MainWindowStyle}" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

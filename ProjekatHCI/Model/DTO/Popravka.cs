@@ -12,7 +12,7 @@ namespace ProjekatHCI.Model.DTO
         public int IdZaposlenog { get; set; }
         public int IdPrijave { get; set; }
         public DateTime Pocetak { get; set; }
-        public DateTime Zavrsetak { get; set; }
+        public Nullable<DateTime> Zavrsetak { get; set; }
         public bool Zavrseno { get; set; }
 
         public Popravka(int idZaposlenog, int idPrijave)
