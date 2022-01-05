@@ -11,13 +11,9 @@
                 <Setter Property="FontFamily" Value="Arial"/>
             </Style>
             <Style TargetType="{x:Type ComboBox}">
-                  
+
                 <Setter Property="FontFamily" Value="Arial"/>
-                <Style.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Style.Resources>
+
             </Style>
             <Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily" Value="Arial"/>
@@ -32,18 +28,16 @@
                         <Setter Property="CornerRadius" Value="5"/>
                     </Style>
                 </Style.Resources>
-              
+
             </Style>
         </Style.Resources>
-
- 
     </Style>
 
 
     <Style TargetType="Window" x:Key="MainWindowStyle">
         <Setter Property="Background" Value="#bad1d9" />
-        
-        
+        <Setter Property="ResizeMode" Value="CanMinimize"/>
+
         <Style.Resources>
             <Style TargetType="{x:Type DataGridRow}">
                 <Style.Resources>
@@ -52,6 +46,21 @@
                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
                     <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="Black" />
                 </Style.Resources>
+            </Style>
+
+            <Style TargetType="TabControl">
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+            
+            <Style TargetType="DataGrid">
+                <Setter Property="Background" Value="#d8e7eb"/>
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Setter Property="CanUserResizeRows" Value="False"/>
             </Style>
 
             <Style TargetType="{x:Type Label}">
@@ -63,6 +72,7 @@
 
                 <Setter Property="FontFamily" Value="Arial"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Background" Value="#d8e7eb"/>
             </Style>
             <Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily" Value="Arial"/>
@@ -78,7 +88,17 @@
                         <Setter Property="CornerRadius" Value="5"/>
                     </Style>
                 </Style.Resources>
+            </Style>
 
+            <Style TargetType="{x:Type Button}" x:Key="SmallerTextBtn">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="Arial"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Style.Resources>
             </Style>
         </Style.Resources>
         

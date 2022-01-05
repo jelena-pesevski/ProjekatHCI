@@ -133,6 +133,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrator.
+        /// </summary>
+        public static string adminWindow {
+            get {
+                return ResourceManager.GetString("adminWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount.
         /// </summary>
         public static string amountHdr {
@@ -187,6 +196,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bill preview.
+        /// </summary>
+        public static string billPreviewTitle {
+            get {
+                return ResourceManager.GetString("billPreviewTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bills.
         /// </summary>
         public static string billsHdr {
@@ -196,11 +214,29 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bill.
+        /// </summary>
+        public static string billWindow {
+            get {
+                return ResourceManager.GetString("billWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blue.
         /// </summary>
         public static string blueTheme {
             get {
                 return ResourceManager.GetString("blueTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details about client.
+        /// </summary>
+        public static string clientDetailsTitle {
+            get {
+                return ResourceManager.GetString("clientDetailsTitle", resourceCulture);
             }
         }
         
@@ -228,6 +264,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string codeHdr {
             get {
                 return ResourceManager.GetString("codeHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change confirmation.
+        /// </summary>
+        public static string confirmationBox {
+            get {
+                return ResourceManager.GetString("confirmationBox", resourceCulture);
             }
         }
         
@@ -291,6 +336,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string descriptionHdr {
             get {
                 return ResourceManager.GetString("descriptionHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description input.
+        /// </summary>
+        public static string descriptionInputTitle {
+            get {
+                return ResourceManager.GetString("descriptionInputTitle", resourceCulture);
             }
         }
         
@@ -439,6 +493,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service.
+        /// </summary>
+        public static string loginWindowTitle {
+            get {
+                return ResourceManager.GetString("loginWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log out.
         /// </summary>
         public static string logoutBtn {
@@ -502,6 +565,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Operator.
+        /// </summary>
+        public static string operatorWindow {
+            get {
+                return ResourceManager.GetString("operatorWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string passwordHdr {
@@ -561,6 +633,15 @@ namespace ProjekatHCI.Resources.Strings.Resources {
         public static string repairmanIdHdr {
             get {
                 return ResourceManager.GetString("repairmanIdHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repairman.
+        /// </summary>
+        public static string repairmanWindow {
+            get {
+                return ResourceManager.GetString("repairmanWindow", resourceCulture);
             }
         }
         

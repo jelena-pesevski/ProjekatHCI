@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjekatHCI"
         xmlns:prop="clr-namespace:ProjekatHCI.Util"
         mc:Ignorable="d"
-        Title="Service" Height="450" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Style="{DynamicResource LoginStyle}">
+          Title="{prop:LocalizationExtension loginWindowTitle}" Height="450" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Style="{DynamicResource LoginStyle}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>

@@ -50,7 +50,9 @@ namespace ProjekatHCI
 
         private async void SetSpareParts()
         {
+      
             spareParts = await RezervniDioService.GetAllRezDijelovi();
+            sparePartsCB.Items.Refresh();
         }
 
         private async void SetServices()
@@ -217,8 +219,6 @@ namespace ProjekatHCI
 
         private async void addSparePartBtn_Click(object sender, RoutedEventArgs e)
         {
-            //gledati koliko je dostupno rezervnog dijela
-            //dodatna provjera je u bazi za svaki slucaj
             Popravka selectedPopravka = (Popravka)unfinishedRepGrid.SelectedItem;
             RezervniDio selectedItem = (RezervniDio)sparePartsCB.SelectedItem;
             if (selectedPopravka != null && selectedItem != null)
@@ -235,6 +235,7 @@ namespace ProjekatHCI
                         return;
                     }
 
+                    if (value < 1) { return; }
                    // if (value > selectedItem.Kolicina) { return; }
 
                     PopravkaRezervniDio pr = new PopravkaRezervniDio(selectedPopravka.IdPopravke, selectedItem.Sifra, value, selectedItem.Cijena);
@@ -248,7 +249,8 @@ namespace ProjekatHCI
                     {
                         MessageBox.Show(mngr.GetString("addSuccessMsg", TranslationSource.Instance.CurrentCulture));
                         selectedItem.Kolicina = selectedItem.Kolicina - value;
-                        availableAmount.Content = selectedItem.Kolicina;
+                        availableAmount.Content = selectedItem.Kolicina-value;
+                        sparePartsCB.Items.Refresh();
                     }
                     else
                     {
@@ -260,14 +262,15 @@ namespace ProjekatHCI
             }
          //   sparePartsCB.SelectedIndex = -1;
             sparePartAmount.Text = "";
-           
         }
 
         private async void sparePartsCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Console.WriteLine("Selection change");
             RezervniDio selectedItem = (RezervniDio)sparePartsCB.SelectedItem;
             if (selectedItem != null)
             {
+                Console.WriteLine("udje change "+ selectedItem.Naziv);
                 RezervniDio mostRecent = await RezervniDioService.GetOne(selectedItem);
                 availableAmount.Content = mostRecent.Kolicina;
                 availableAmount.Visibility = Visibility.Visible;
@@ -277,6 +280,7 @@ namespace ProjekatHCI
                     selectedItem.Kolicina = mostRecent.Kolicina;
                 }
             }
+            Console.WriteLine("ne udje change");
         }
 
         private async void finishBtn_Click(object sender, RoutedEventArgs e)
@@ -315,8 +319,11 @@ namespace ProjekatHCI
             Popravka selectedPopravka = (Popravka)unfinishedRepGrid.SelectedItem;
             if (selectedPopravka != null)
             {
-                servicesCB.SelectedIndex = -1;
-                sparePartsCB.SelectedIndex = -1;
+                servicesCB.SelectedItem = null;
+                sparePartsCB.SelectedItem = null;
+
+                sparePartAmount.Text = "";
+                serviceAmount.Text = "";
                 availableAmount.Content = "";
 
                 BillPreviewWindow win = new BillPreviewWindow(selectedPopravka);

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjekatHCI"
         xmlns:prop="clr-namespace:ProjekatHCI.Util"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
+         Title="{prop:LocalizationExtension adminWindow}" Height="500" Width="800" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
     <Grid>
 
         <ComboBox x:Name="languageSelector" VerticalContentAlignment="Center"  SelectionChanged="LanguageChanged" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Height="33" Width="81" SelectedValuePath="Name">
@@ -37,7 +37,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid x:Name="employeesDataGrid" AutoGenerateColumns = "False"  Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="employeesDataGrid_RowEditEnding" CanUserDeleteRows="False" >
+                    <DataGrid x:Name="employeesDataGrid" AutoGenerateColumns = "False"  Height="165" VerticalAlignment="Top" CanUserResizeColumns="False" Grid.ColumnSpan="5" RowEditEnding="employeesDataGrid_RowEditEnding" CanUserDeleteRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="empId" Header="{prop:LocalizationExtension idHdr}" Binding="{Binding IdZaposlenog}" IsReadOnly="True" Width="0.25*" />
                             <DataGridTextColumn x:Name="empFirstName" Header="{prop:LocalizationExtension firstnameHdr}" Binding="{Binding Ime}" IsReadOnly="False" Width="*" />

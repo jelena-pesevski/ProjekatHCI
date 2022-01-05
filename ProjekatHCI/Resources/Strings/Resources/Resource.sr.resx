@@ -141,6 +141,9 @@
   <data name="addSuccessMsg" xml:space="preserve">
     <value>Uspješno dodavanje!</value>
   </data>
+  <data name="adminWindow" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
   <data name="amountHdr" xml:space="preserve">
     <value>Količina</value>
   </data>
@@ -159,8 +162,20 @@
   <data name="billPreviewBtn" xml:space="preserve">
     <value>Pregled računa</value>
   </data>
+  <data name="billPreviewTitle" xml:space="preserve">
+    <value>Pretpregled računa</value>
+  </data>
+  <data name="billsHdr" xml:space="preserve">
+    <value>Računi</value>
+  </data>
+  <data name="billWindow" xml:space="preserve">
+    <value>Račun</value>
+  </data>
   <data name="blueTheme" xml:space="preserve">
     <value>Plava</value>
+  </data>
+  <data name="clientDetailsTitle" xml:space="preserve">
+    <value>Detalji o klijentu</value>
   </data>
   <data name="clientIdHdr" xml:space="preserve">
     <value>KlijentId</value>
@@ -170,6 +185,9 @@
   </data>
   <data name="codeHdr" xml:space="preserve">
     <value>Šifra</value>
+  </data>
+  <data name="confirmationBox" xml:space="preserve">
+    <value>Potvrda izmjene</value>
   </data>
   <data name="confirmUpdateMsg" xml:space="preserve">
     <value>Sačuvaj izmjene</value>
@@ -192,10 +210,13 @@
   <data name="descriptionHdr" xml:space="preserve">
     <value>Opis</value>
   </data>
+  <data name="descriptionInputTitle" xml:space="preserve">
+    <value>Unos opisa</value>
+  </data>
   <data name="descriptionLbl" xml:space="preserve">
     <value>Opis:</value>
   </data>
-  <data name="empolyeesHdr" xml:space="preserve">
+  <data name="employeesHdr" xml:space="preserve">
     <value>Zaposleni</value>
   </data>
   <data name="emptyFieldsMsg" xml:space="preserve">
@@ -240,6 +261,9 @@
   <data name="loginFailMsg" xml:space="preserve">
     <value>Neispravno korisničko ime ili lozinka!</value>
   </data>
+  <data name="loginWindowTitle" xml:space="preserve">
+    <value>Servis</value>
+  </data>
   <data name="logoutBtn" xml:space="preserve">
     <value>Odjava</value>
   </data>
@@ -261,6 +285,9 @@
   <data name="operatorIdHdr" xml:space="preserve">
     <value>OperaterId</value>
   </data>
+  <data name="operatorWindow" xml:space="preserve">
+    <value>Operater</value>
+  </data>
   <data name="passwordHdr" xml:space="preserve">
     <value>Lozinka</value>
   </data>
@@ -279,11 +306,11 @@
   <data name="purpleTheme" xml:space="preserve">
     <value>Ljubičasta</value>
   </data>
-  <data name="racuniHdr" xml:space="preserve">
-    <value>Računi</value>
-  </data>
   <data name="repairmanIdHdr" xml:space="preserve">
     <value>Id majstora</value>
+  </data>
+  <data name="repairmanWindow" xml:space="preserve">
+    <value>Majstor</value>
   </data>
   <data name="repairmentFinishedSuccessMsg" xml:space="preserve">
     <value>Popravka je završena!</value>

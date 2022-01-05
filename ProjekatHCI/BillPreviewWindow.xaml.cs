@@ -140,17 +140,30 @@ namespace ProjekatHCI
 
         private async void PerformUpdateService(PregledUsluga u)
         {
-            bool result = await PopravkaUslugaService.UpdateUsluga(new PopravkaUsluga(u.IdPopravke, u.IdUsluge, u.Kolicina, u.Cijena));
-            if (result)
-            {
-                MessageBox.Show(mngr.GetString("updateSuccessMsg", TranslationSource.Instance.CurrentCulture));
-            }
-            else
+            if (u.Kolicina < 0)
             {
                 MessageBox.Show(mngr.GetString("updateFailedMsg", TranslationSource.Instance.CurrentCulture));
                 PopravkaUsluga old = await PopravkaUslugaService.GetOne(u);
                 u.Kolicina = old.Kolicina;
-             
+            }else if (u.Kolicina == 0)
+            {
+                await PopravkaUslugaService.DeleteUsluga(new PopravkaUsluga(u.IdPopravke, u.IdUsluge, u.Kolicina, u.Cijena));
+                UpdateServices();
+            }
+            else
+            {
+                bool result = await PopravkaUslugaService.UpdateUsluga(new PopravkaUsluga(u.IdPopravke, u.IdUsluge, u.Kolicina, u.Cijena));
+                if (result)
+                {
+                    MessageBox.Show(mngr.GetString("updateSuccessMsg", TranslationSource.Instance.CurrentCulture));
+                }
+                else
+                {
+                    MessageBox.Show(mngr.GetString("updateFailedMsg", TranslationSource.Instance.CurrentCulture));
+                    PopravkaUsluga old = await PopravkaUslugaService.GetOne(u);
+                    u.Kolicina = old.Kolicina;
+
+                }
             }
             servicesDataGrid.Items.Refresh();
         }
@@ -186,19 +199,32 @@ namespace ProjekatHCI
         }
         private async void PerformUpdatePart(PregledRezervniDio r)
         {
-            bool result = await PopravkaRezervniDioService.UpdateRezDio(new PopravkaRezervniDio(r.IdPopravke, r.Sifra, r.Kolicina, r.Cijena));
-            if (result)
-            {
-                MessageBox.Show(mngr.GetString("updateSuccessMsg", TranslationSource.Instance.CurrentCulture));
-            }
-            else
+            if (r.Kolicina < 0)
             {
                 MessageBox.Show(mngr.GetString("updateFailedMsg", TranslationSource.Instance.CurrentCulture));
                 PopravkaRezervniDio old = await PopravkaRezervniDioService.GetOne(r);
                 r.Kolicina = old.Kolicina;
-
             }
-            servicesDataGrid.Items.Refresh();
+            else if (r.Kolicina == 0)
+            {
+                await PopravkaRezervniDioService.DeleteRezDio(new PopravkaRezervniDio(r.IdPopravke, r.Sifra, r.Kolicina, r.Cijena));
+                UpdateParts();
+            }
+            else {
+                bool result = await PopravkaRezervniDioService.UpdateRezDio(new PopravkaRezervniDio(r.IdPopravke, r.Sifra, r.Kolicina, r.Cijena));
+                if (result)
+                {
+                    MessageBox.Show(mngr.GetString("updateSuccessMsg", TranslationSource.Instance.CurrentCulture));
+                }
+                else
+                {
+                    MessageBox.Show(mngr.GetString("updateFailedMsg", TranslationSource.Instance.CurrentCulture));
+                    PopravkaRezervniDio old = await PopravkaRezervniDioService.GetOne(r);
+                    r.Kolicina = old.Kolicina;
+
+                }
+            }
+            partsDataGrid.Items.Refresh();
         }
     }
 }

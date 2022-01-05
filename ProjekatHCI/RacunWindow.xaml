@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjekatHCI"
           xmlns:prop="clr-namespace:ProjekatHCI.Util"
         mc:Ignorable="d"
-        Title="" Height="350" Width="600"  WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
+          Title="{prop:LocalizationExtension billWindow}" Height="350" Width="600"  WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
     <Grid>
         <DataGrid Margin="30,20,30,0" x:Name="itemsDataGrid" AutoGenerateColumns = "False" Height="200"  VerticalAlignment="Top" CanUserResizeColumns="False" CanUserDeleteRows="False">
             <DataGrid.Columns>

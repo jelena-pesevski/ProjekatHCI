@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjekatHCI"
         mc:Ignorable="d"
         xmlns:prop="clr-namespace:ProjekatHCI.Util"
-        Title="" Height="450" Width="550" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
+        Title="{prop:LocalizationExtension billPreviewTitle}" Height="450" Width="550" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
     <Grid Margin="10,5,10,5">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -21,7 +21,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="deleteUslugaBtn" Content="{prop:LocalizationExtension deleteBtn}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Width="94" Margin="0,0,0,5"  Click="deleteUslugaBtn_Click"/>
+        <Button x:Name="deleteUslugaBtn" Content="{prop:LocalizationExtension deleteBtn}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Width="94" Margin="0,0,0,3"  Click="deleteUslugaBtn_Click"/>
 
         <DataGrid Grid.Row="1" x:Name="partsDataGrid" AutoGenerateColumns = "False" Height="170" VerticalAlignment="Top" CanUserResizeColumns="False" CanUserDeleteRows="False" RowEditEnding="partsDataGrid_RowEditEnding">
             <DataGrid.Columns>
@@ -30,6 +30,6 @@
                 <DataGridTextColumn x:Name="partAmountCol" Header="{prop:LocalizationExtension amountHdr}" Binding="{Binding Kolicina,  ValidatesOnExceptions=True}" IsReadOnly="False" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="deleteRezDioBtn" Grid.Row="1" Content="{prop:LocalizationExtension deleteBtn}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Width="94" Margin="0,0,0,5" Click="deleteRezDioBtn_Click"/>
+        <Button x:Name="deleteRezDioBtn" Grid.Row="1" Content="{prop:LocalizationExtension deleteBtn}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" Width="94" Margin="0,0,0,3" Click="deleteRezDioBtn_Click"/>
     </Grid>
 </Window>

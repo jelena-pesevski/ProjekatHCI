@@ -141,6 +141,9 @@
   <data name="addSuccessMsg" xml:space="preserve">
     <value>Successfully added!</value>
   </data>
+  <data name="adminWindow" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
   <data name="amountHdr" xml:space="preserve">
     <value>Amount</value>
   </data>
@@ -159,11 +162,20 @@
   <data name="billPreviewBtn" xml:space="preserve">
     <value>Bill preview</value>
   </data>
+  <data name="billPreviewTitle" xml:space="preserve">
+    <value>Bill preview</value>
+  </data>
   <data name="billsHdr" xml:space="preserve">
     <value>Bills</value>
   </data>
+  <data name="billWindow" xml:space="preserve">
+    <value>Bill</value>
+  </data>
   <data name="blueTheme" xml:space="preserve">
     <value>Blue</value>
+  </data>
+  <data name="clientDetailsTitle" xml:space="preserve">
+    <value>Details about client</value>
   </data>
   <data name="clientIdHdr" xml:space="preserve">
     <value>ClientId</value>
@@ -173,6 +185,9 @@
   </data>
   <data name="codeHdr" xml:space="preserve">
     <value>Code</value>
+  </data>
+  <data name="confirmationBox" xml:space="preserve">
+    <value>Change confirmation</value>
   </data>
   <data name="confirmUpdateMsg" xml:space="preserve">
     <value>Save changes</value>
@@ -194,6 +209,9 @@
   </data>
   <data name="descriptionHdr" xml:space="preserve">
     <value>Description</value>
+  </data>
+  <data name="descriptionInputTitle" xml:space="preserve">
+    <value>Description input</value>
   </data>
   <data name="descriptionLbl" xml:space="preserve">
     <value>Description:</value>
@@ -243,6 +261,9 @@
   <data name="loginFailMsg" xml:space="preserve">
     <value>Incorrect username or password!</value>
   </data>
+  <data name="loginWindowTitle" xml:space="preserve">
+    <value>Service</value>
+  </data>
   <data name="logoutBtn" xml:space="preserve">
     <value>Log out</value>
   </data>
@@ -264,6 +285,9 @@
   <data name="operatorIdHdr" xml:space="preserve">
     <value>OperatorId</value>
   </data>
+  <data name="operatorWindow" xml:space="preserve">
+    <value>Operator</value>
+  </data>
   <data name="passwordHdr" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -284,6 +308,9 @@
   </data>
   <data name="repairmanIdHdr" xml:space="preserve">
     <value>RepairmanId</value>
+  </data>
+  <data name="repairmanWindow" xml:space="preserve">
+    <value>Repairman</value>
   </data>
   <data name="repairmentFinishedSuccessMsg" xml:space="preserve">
     <value>Repairment is finished!</value>

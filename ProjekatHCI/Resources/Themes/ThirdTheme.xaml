@@ -2,22 +2,34 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ProjekatHCI.Resources.Themes">
 
+ 
     <Style TargetType="Window" x:Key="LoginStyle" >
         <Setter Property="Background" Value="#d6babe" />
         <Style.Resources>
             <Style TargetType="{x:Type Label}">
                 <Setter Property="FontWeight" Value="DemiBold"/>
                 <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="Bariol"/>
+            </Style>
+            <Style TargetType="{x:Type ComboBox}">
+
+                <Setter Property="FontFamily" Value="Bariol"/>
+
+            </Style>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="Bariol"/>
             </Style>
 
             <Style TargetType="{x:Type Button}">
                 <Setter Property="Background" Value="White" />
                 <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="Bariol"/>
                 <Style.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
                     </Style>
                 </Style.Resources>
+
             </Style>
         </Style.Resources>
     </Style>
@@ -25,6 +37,7 @@
 
     <Style TargetType="Window" x:Key="MainWindowStyle">
         <Setter Property="Background" Value="#d6babe" />
+        <Setter Property="ResizeMode" Value="CanMinimize"/>
         <Style.Resources>
             <Style TargetType="{x:Type DataGridRow}">
                 <Style.Resources>
@@ -34,7 +47,63 @@
                     <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="Black" />
                 </Style.Resources>
             </Style>
+
+            <Style TargetType="TabControl">
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+
+            <Style TargetType="DataGrid">
+                <Setter Property="Background" Value="#deced1"/>
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="FontFamily" Value="Bariol"/>
+                <Setter Property="CanUserResizeRows" Value="False"/>
+            </Style>
+
+            <Style TargetType="{x:Type Label}">
+          
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="Bariol"/>
+            </Style>
+            <Style TargetType="{x:Type ComboBox}">
+
+                <Setter Property="FontFamily" Value="Bariol"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Background" Value="#d6babe"/>
+
+            </Style>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="Bariol"/>
+            </Style>
+
+
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="Bariol"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
+
+            <Style TargetType="{x:Type Button}" x:Key="SmallerTextBtn">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="Bariol"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Style.Resources>
+            </Style>
         </Style.Resources>
+
+
     </Style>
 
 </ResourceDictionary>

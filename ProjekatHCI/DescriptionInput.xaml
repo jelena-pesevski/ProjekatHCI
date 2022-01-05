@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjekatHCI"
         xmlns:prop="clr-namespace:ProjekatHCI.Util"
         mc:Ignorable="d"
-        Title="" Height="250" Width="400" Style="{DynamicResource MainWindowStyle}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="{prop:LocalizationExtension descriptionInputTitle}" Height="250" Width="400" Style="{DynamicResource MainWindowStyle}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>

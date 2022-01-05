@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjekatHCI"
         xmlns:prop="clr-namespace:ProjekatHCI.Util"
         mc:Ignorable="d"
-        Title="" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+         Title="{prop:LocalizationExtension confirmationBox}" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid >
         <Label Content="{prop:LocalizationExtension confirmUpdateMsg}" Margin="10,18,13,39" />
         <Button Content="{prop:LocalizationExtension yesBtn}"   Click="Yes_Button_Click" Margin="75,58,71,15" Width="50" />

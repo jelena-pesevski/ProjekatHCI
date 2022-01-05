@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjekatHCI"
          xmlns:prop="clr-namespace:ProjekatHCI.Util"
         mc:Ignorable="d"
-        Title="RepairmanWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
+          Title="{prop:LocalizationExtension repairmanWindow}" Height="500" Width="800" WindowStartupLocation="CenterScreen" Style="{DynamicResource MainWindowStyle}">
     <Grid>
         <ComboBox x:Name="languageSelector" VerticalContentAlignment="Center"  SelectionChanged="LanguageChanged" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Height="33" Width="81" SelectedValuePath="Name">
             <ComboBoxItem Name="en" Content="{prop:LocalizationExtension enLbl}" />
@@ -80,14 +80,14 @@
                     <ComboBox Grid.Column="0" Grid.Row="1" Margin="10,10,10,130" VerticalContentAlignment="Center" x:Name="servicesCB" DisplayMemberPath="Naziv"/>
                     <ComboBox Grid.Column="0" Grid.Row="1" Margin="10,65,10,75" VerticalContentAlignment="Center" x:Name="sparePartsCB" DisplayMemberPath="Naziv" SelectionChanged="sparePartsCB_SelectionChanged"/>
                     <Label x:Name="availableLbl" Grid.Column="0" Grid.Row="1" Content="{prop:LocalizationExtension availableLbl}" Margin="10,95, 0, 0"  />
-                    <Label x:Name="availableAmount" Grid.Column="0" Grid.Row="1" Margin="70, 95, 0, 0"/>
+                    <Label x:Name="availableAmount" Grid.Column="0" Grid.Row="1" Margin="87,95,10,0"/>
 
 
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="10,10,10,130" x:Name="serviceAmount" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center"/>
                     <TextBox Grid.Column="1" Grid.Row="1" Margin="10,65,10,75" x:Name="sparePartAmount" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
-                    <Button Grid.Column="2" Grid.Row="1" Margin="10,10,10,130" x:Name="addServiceBtn" Content="{prop:LocalizationExtension addServiceBtn}" Click="addServiceBtn_Click"/>
-                    <Button Grid.Column="2" Grid.Row="1" Margin="10,65,10,75" x:Name="addSparePartBtn" Content="{prop:LocalizationExtension addSparePartBtn}" Click="addSparePartBtn_Click"/>
+                    <Button Grid.Column="2" Grid.Row="1" Margin="10,10,10,130" x:Name="addServiceBtn" Content="{prop:LocalizationExtension addServiceBtn}" Click="addServiceBtn_Click" Style="{DynamicResource ResourceKey=SmallerTextBtn}"/>
+                    <Button Grid.Column="2" Grid.Row="1" Margin="10,65,10,75" x:Name="addSparePartBtn" Content="{prop:LocalizationExtension addSparePartBtn}" Click="addSparePartBtn_Click" Style="{DynamicResource ResourceKey=SmallerTextBtn}"/>
 
 
                     <Button x:Name="previewBtn"  Content="{prop:LocalizationExtension billPreviewBtn}" Click="previewBtn_Click" Grid.Column="5" Grid.Row="1" Height="40" Margin="20,5,20,115" />
