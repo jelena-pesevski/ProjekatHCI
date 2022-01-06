@@ -22,7 +22,10 @@
         <Button x:Name="logoutBtn" Content="{prop:LocalizationExtension logoutBtn}" Click="Logout" Height="40" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0"/>
 
         <TabControl Margin="10,50,10,50">
-            <TabItem Header="{prop:LocalizationExtension faultReportsHdr}">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="{prop:LocalizationExtension faultReportsHdr}"/>
+                </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1.7*"/>
@@ -55,7 +58,10 @@
             </TabItem>
 
 
-            <TabItem Header="{prop:LocalizationExtension unfinishedHdr}">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="{prop:LocalizationExtension unfinishedHdr}"/>
+                </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>

@@ -19,6 +19,10 @@
                 <Setter Property="FontFamily" Value="Arial"/>
             </Style>
 
+            <Style TargetType="{x:Type TabControl}">
+                <Setter Property="FontFamily" Value="Arial"/>
+            </Style>
+
             <Style TargetType="{x:Type Button}">
                 <Setter Property="Background" Value="White" />
                 <Setter Property="FontSize" Value="15" />

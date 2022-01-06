@@ -28,6 +28,7 @@ namespace ProjekatHCI
         private List<PregledUsluga> services = new List<PregledUsluga>();
         private List<PregledRezervniDio> parts = new List<PregledRezervniDio>();
         private Popravka currPopravka;
+        public Boolean IsUpdatedSparePart { set; get; } = false;
         public BillPreviewWindow(Popravka p)
         {
             InitializeComponent();
@@ -83,6 +84,7 @@ namespace ProjekatHCI
                 {
                     parts.Remove(selectedItem);
                     partsDataGrid.Items.Refresh();
+                    IsUpdatedSparePart = true;
                     MessageBox.Show(mngr.GetString("deleteSuccessMsg", TranslationSource.Instance.CurrentCulture));
                 }
             }
@@ -209,12 +211,14 @@ namespace ProjekatHCI
             {
                 await PopravkaRezervniDioService.DeleteRezDio(new PopravkaRezervniDio(r.IdPopravke, r.Sifra, r.Kolicina, r.Cijena));
                 UpdateParts();
+                IsUpdatedSparePart = true;
             }
             else {
                 bool result = await PopravkaRezervniDioService.UpdateRezDio(new PopravkaRezervniDio(r.IdPopravke, r.Sifra, r.Kolicina, r.Cijena));
                 if (result)
                 {
                     MessageBox.Show(mngr.GetString("updateSuccessMsg", TranslationSource.Instance.CurrentCulture));
+                    IsUpdatedSparePart = true;
                 }
                 else
                 {
